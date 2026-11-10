@@ -1,35 +1,55 @@
-import { CcrLogo } from "@/components/brand/ccr-logo";
-import { UscMark } from "@/components/brand/usc-mark";
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { heroContent } from "@/content/home";
-import { site } from "@/content/site";
 
 export function Hero() {
   return (
     <section
+      id="top"
       aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden bg-black"
+      className="relative isolate scroll-mt-24 overflow-hidden bg-black lg:flex lg:min-h-[min(54rem,calc(100svh-5rem))] lg:flex-col"
     >
-      <div aria-hidden="true" className="absolute inset-0 -z-10">
-        <div className="absolute inset-y-0 left-0 w-1 bg-garnet" />
-        <div className="tech-grid absolute inset-y-0 right-0 hidden w-1/2 opacity-50 lg:block" />
-        <div className="absolute right-0 top-0 hidden h-px w-1/2 bg-red lg:block" />
-        <span className="absolute -left-10 top-24 select-none font-display text-[18rem] leading-none text-white/[0.025] sm:-left-16 sm:top-28 sm:text-[28rem]">
-          01
-        </span>
+      <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-[16/9] lg:absolute lg:inset-0 lg:aspect-auto lg:h-full">
+        <Image
+          src="/images/miata_background.png"
+          alt="Illustrative image of a Mazda Miata race car on a racetrack."
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-[62%_58%] lg:object-[64%_64%]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.78)_30%,rgba(0,0,0,0.32)_62%,rgba(0,0,0,0.04)_100%)] lg:block"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(0,0,0,0.3)_0%,transparent_28%,transparent_70%,rgba(0,0,0,0.45)_100%)] lg:block"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.72)_100%)] lg:hidden"
+        />
+        <p className="absolute right-4 top-4 bg-black/40 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-white/75 sm:right-6 sm:top-6">
+          {heroContent.imageNote}
+        </p>
       </div>
 
-      <div className="shell grid gap-16 py-14 sm:py-16 lg:grid-cols-12 lg:gap-10 lg:py-24">
-        <div className="lg:col-span-7">
-          <div className="intro-rise flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
-            <span>{heroContent.eyebrow}</span>
-            <span aria-hidden="true" className="h-1 w-1 bg-red" />
-            <span className="text-white/55">{heroContent.affiliation}</span>
-          </div>
+      <div className="shell relative flex flex-1 flex-col pb-10 pt-8 sm:pb-12 lg:pb-10 lg:pt-20 xl:pt-24">
+        <div className="max-w-[46rem]">
+          <p className="intro-rise flex flex-col gap-1.5">
+            <span className="text-[13px] font-medium uppercase tracking-[0.16em] text-white">
+              {heroContent.name}
+            </span>
+            <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-white/65">
+              {heroContent.affiliation}
+            </span>
+          </p>
 
           <h1
             id="hero-title"
-            className="mt-7 font-display text-[clamp(4.5rem,11.2vw,10.5rem)] uppercase leading-[0.81] tracking-[0.005em] text-white"
+            className="heading-hero mt-6 text-[clamp(4rem,9.2vw,9rem)] text-white sm:mt-8"
           >
             <span
               className="intro-rise block"
@@ -46,14 +66,14 @@ export function Hero() {
           </h1>
 
           <p
-            className="intro-rise mt-8 max-w-xl text-base/7 text-white/65 sm:text-lg/8"
+            className="intro-rise mt-6 max-w-[34rem] text-[17px]/[1.7] text-white/80 sm:mt-8 sm:text-[18px]/[1.65] lg:max-w-[32rem]"
             style={{ animationDelay: "260ms" }}
           >
             {heroContent.description}
           </p>
 
           <div
-            className="intro-rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="intro-rise mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
             style={{ animationDelay: "340ms" }}
           >
             <ArrowLink href={heroContent.primaryCta.href}>
@@ -62,82 +82,32 @@ export function Hero() {
             <ArrowLink href={heroContent.secondaryCta.href} variant="outline">
               {heroContent.secondaryCta.label}
             </ArrowLink>
+            <Link
+              href={heroContent.tertiaryCta.href}
+              className="inline-flex min-h-11 items-center gap-2 px-1 text-[12px] font-medium uppercase tracking-[0.14em] text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            >
+              {heroContent.tertiaryCta.label}
+              <span aria-hidden="true">↓</span>
+            </Link>
           </div>
-
-          <dl
-            className="intro-rise mt-14 grid grid-cols-2 gap-px border border-white/10 bg-white/10 sm:grid-cols-4"
-            style={{ animationDelay: "420ms" }}
-          >
-            {heroContent.facts.map((fact) => (
-              <div key={fact.label} className="bg-black px-4 py-4">
-                <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">
-                  {fact.label}
-                </dt>
-                <dd className="mt-2 text-sm font-medium text-white/85">
-                  {fact.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
         </div>
 
-        <div
-          className="intro-rise flex flex-col justify-center lg:col-span-5"
-          style={{ animationDelay: "260ms" }}
-        >
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="checkers absolute -left-5 -top-5 h-16 w-16 text-red"
-            />
-            <div className="relative border border-white/15 bg-ink p-4 sm:p-5">
-              <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3 font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">
-                <span>{heroContent.panel.label}</span>
-                <span className="flex items-center gap-2 text-white/60">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 bg-red" />
-                  {heroContent.panel.status}
-                </span>
-              </div>
-
-              <div className="mt-5 border border-white/10 bg-black p-4 sm:p-6">
-                <CcrLogo
-                  variant="badge"
-                  priority
-                  sizes="(min-width: 1024px) 420px, (min-width: 640px) 70vw, 90vw"
-                  className="h-auto w-full"
-                />
-              </div>
-
-              <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-white/10 pt-4">
-                {heroContent.panel.facts.map((fact) => (
-                  <div key={fact.label}>
-                    <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">
-                      {fact.label}
-                    </dt>
-                    <dd className="mt-1.5 text-xs font-medium text-white/80 sm:text-sm">
-                      {fact.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              <div className="mt-5 bg-red px-4 py-3">
-                <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-white">
-                  {heroContent.panel.disciplines}
-                </p>
-              </div>
+        <dl className="mt-10 grid grid-cols-2 gap-x-4 gap-y-5 border-t border-white/20 pt-5 sm:mt-12 sm:grid-cols-3 sm:gap-8 lg:mt-auto lg:pt-6">
+          {heroContent.facts.map((fact) => (
+            <div key={fact.label}>
+              <dt className="text-[10.5px] font-medium uppercase tracking-[0.16em] text-white/65">
+                {fact.label}
+              </dt>
+              <dd className="mt-1.5 text-[12px] font-medium leading-snug text-white sm:text-[13px]">
+                {fact.value}
+              </dd>
             </div>
-          </div>
+          ))}
+        </dl>
+      </div>
 
-          <div className="mt-4 flex items-center gap-3">
-            <UscMark className="h-9 w-8 shrink-0" />
-            <p className="font-mono text-[9px] uppercase leading-relaxed tracking-[0.15em] text-white/55">
-              {site.affiliation}
-              <br />
-              {site.university}
-            </p>
-          </div>
-        </div>
+      <div aria-hidden="true" className="relative h-1.5 bg-red">
+        <div className="checkers absolute inset-y-0 right-0 w-24 text-black/25" />
       </div>
     </section>
   );

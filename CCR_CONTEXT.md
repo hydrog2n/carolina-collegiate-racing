@@ -1,6 +1,7 @@
 # Carolina Collegiate Racing — Website Context
 
 Prepared: 2026-11-09
+Last Updated: 2026-11-09
 Source conversation: AI Website Planning (`6af150b3-e6cc-83ea-a74f-816f1627b8e2`).
 
 ## 1. Purpose and status labels
@@ -43,7 +44,8 @@ Do not rewrite, remove, or weaken that block. This context file does not modify 
 | Development stage | CONFIRMED | Recently founded and preparing to compete, as described during planning. |
 | Racing scope | CONFIRMED | Multiple motorsport disciplines. |
 | Vehicle focus | CONFIRMED | Primarily Miatas. |
-| Existing race car program | CONFIRMED | CCR already owns or operates a race car. The wording does not resolve ownership versus operation. |
+| Existing race car program | CONFIRMED | CCR is currently acquiring a vehicle and the equipment necessary to establish its racing program. |
+| Membership eligibility | CONFIRMED | Membership is open to University of South Carolina students and faculty. |
 | Organization structure | CONFIRMED | Leadership plus specialized departments; engineering, operations, and marketing were given as examples. Exact department names and staffing remain unknown. |
 | Available content | CONFIRMED | Some real assets and information are ready; a complete inventory was not supplied. |
 | Website audience | CONFIRMED / PARTLY UNSPECIFIED | The owner selected “All of the above equally.” The original choice list is not recoverable in the available conversation. Do not invent a confirmed audience ranking. |
@@ -68,41 +70,276 @@ These are mission statements, not evidence of completed builds, established indu
 
 ### Membership and leadership
 
-- **UNKNOWN:** Membership eligibility; the owner explicitly said it is not finalized.
+- **CONFIRMED:** Membership is open to University of South Carolina students and faculty.
 - **UNKNOWN:** Application process, dues, prerequisites, majors or student groups eligible, deadlines, meeting details, leadership names, biographies, and public contact details.
-- Do not claim membership is open to everyone, limited to engineering students, or currently accepting applications without confirmation.
+- Do not invent additional membership requirements or restrictions.
 
-## 4. Branding and supplied logo assets
+## 4. Brand Identity and Visual Design System
 
-### Confirmed direction
+### 4.1 Authoritative Design Direction
 
-- Use existing CCR logos, with room for supporting graphic elements.
-- CCR is the primary identity. USC affiliation should be clearly identifiable and secondary.
-- Communicate a professional, credible organization.
-- Create an original CCR website with a clear motorsports identity.
+**CONFIRMED DESIGN DIRECTION:** The official `CCR_Sponsorship_Packet_2026-2027_v4.pdf` establishes the foundational visual identity for Carolina Collegiate Racing.
 
-### Logo asset reference and handling
+Primary visual reference location:
 
-The conversation refers to supplied/existing CCR logo assets. An earlier assistant described badge and horizontal variants, but the available handoff contains no inspectable logo files or asset paths. No logo files were found in the current project workspace during preparation of this document.
+docs/CCR_Sponsorship_Packet_2026-2027_v4.pdf
 
-- Treat the owner's original CCR logo files as the intended source assets; do not recreate a logo from memory or substitute another team's identity.
-- Locate and visually inspect those assets when they become available. Record their actual filenames, paths, variants, formats, and suitable backgrounds in the project asset inventory.
-- Preserve proportions and original artwork. Choose an appropriate supplied variant for the background; do not stretch, redraw, recolor, crop, or add effects to the mark without authorization.
-- Do not invent filenames, claim assets are installed, or ship broken image references. Use a clearly marked development placeholder until the real file is available.
-- Use only authorized USC and sponsor marks. Student organization recognition does not establish permission to use every university or athletics logo.
+Before making significant visual design changes, inspect this document alongside CCR_COLORS.md. The packet establishes CCR's foundational typography, color hierarchy, graphic elements, and editorial composition.
 
-### Proposed visual direction, pending asset verification
+If the PDF cannot be inspected directly, report that limitation rather than claiming to have reviewed it.
 
-Earlier assistant summaries proposed garnet, black, and white, racing photography, strong typography, and editorial layouts. Treat these as design proposals rather than independently confirmed brand specifications.
+The website should adapt the packet's typography, color hierarchy, editorial composition, and graphic language into a distinctive digital experience.
 
-- Derive final colors from verified CCR artwork or owner-approved brand values; exact color codes and fonts are **UNKNOWN**.
-- Favor clear hierarchy, readable type, authentic photography, and deliberate spacing.
-- Use original motorsports-inspired supporting graphics where helpful. Keep motion restrained and usable with reduced-motion preferences.
-- Keep CCR recognizable rather than making the site look like a USC athletics site.
+However, the website is not intended to be a literal recreation of the sponsorship packet. Website-specific design decisions and the owner's subsequent instructions take precedence where they differ from the packet.
+
+In particular:
+- The website should use full-color photography rather than the packet's monochrome image treatment.
+- The website should remain predominantly dark rather than alternating equally between black and white sections.
+- Photography placeholders are intentional and should remain until real assets are supplied.
+- The website should feel like an authentic collegiate motorsports organization, not a technical prototype or corporate presentation.
+
+Hammer Down Racing may remain a secondary reference for website interactions and layout inspiration, but CCR's own identity takes priority.
+
+### 4.2 Typography
+
+The website uses two primary typefaces.
+
+**Anton — Display and Headings**
+- Primary page titles and prominent section headlines.
+- Bold, condensed, uppercase typography.
+- Oversized hero statements.
+- Selected large-scale graphic typography.
+- Occasional Racing Red emphasis within headlines.
+
+Use Anton selectively. Not every section requires an oversized condensed headline.
+
+Avoid excessively tight line heights, awkward wrapping, or overlapping text, particularly on mobile devices.
+
+**Gilroy — Body and Interface**
+- Paragraphs and descriptive copy.
+- Navigation and menu labels.
+- Buttons and calls to action.
+- Section identifiers and metadata.
+- Captions and supporting information.
+- Secondary headings where a quieter typographic style is appropriate.
+
+Use Gilroy weights and sizes to create a clear hierarchy.
+
+Do not render important navigation, labels, or interactive elements at excessively small sizes. Prioritize readability over decorative technical styling.
+
+Use locally supplied, appropriately licensed font files.
+
+### 4.3 Color System
+
+Refer to `CCR_COLORS.md` for authoritative color values.
+
+**Primary palette:**
+- Racing Red: `#CC2E40` — Signature chromatic brand color.
+- Black: `#000000` — Primary background foundation.
+- White: `#FFFFFF` — Primary typography and contrast.
+- USC Garnet: `#73000A` — Secondary supporting brand color.
+
+**Color philosophy:**
+
+The website should be predominantly dark, using black and charcoal backgrounds to create a dramatic motorsports atmosphere.
+
+Racing Red is the primary chromatic color and should feature prominently in headings, graphic elements, calls to action, and selected interface details.
+
+White provides clear, readable typography and visual contrast.
+
+Traditional garnet remains secondary.
+
+Use dark charcoal variations to create depth and separation between sections without relying on excessive borders or cards.
+
+Occasional light-background compositions are permitted when they serve the design, but a regular alternation between black and white sections is not required.
+
+Avoid excessive gradients, glow effects, or unrelated saturated colors.
+
+### 4.4 Layout and Composition
+
+The website should feel professionally art-directed, energetic, and authentic.
+
+Design characteristics:
+- Strong editorial typography and visual hierarchy.
+- Cinematic, image-led compositions.
+- Deliberate negative space.
+- Varied section layouts and pacing.
+- Asymmetric compositions where appropriate.
+- Generous spacing around important content.
+- Restrained use of thin rules, numbered sections, and technical graphics.
+- Clear visual progression through the organization, its racing program, people, and opportunities.
+
+Avoid:
+- Repetitive large headline and bordered-panel layouts.
+- Generic SaaS-style cards.
+- Excessive rounded containers.
+- Repeated slogans and promotional statements.
+- Tiny technical labels used primarily for decoration.
+- Oversized sections with minimal meaningful content.
+- Prominent development-status panels.
+- Unnecessary visual effects.
+
+The website should prioritize a coherent visitor experience over decorative complexity.
+
+### 4.5 Photography and Image Treatment
+
+**CONFIRMED DESIGN DIRECTION: Full-color photography is preferred throughout the website.**
+
+Do not automatically convert racing photographs to black and white, grayscale, or heavily desaturated treatments.
+
+Photography should communicate the energy, atmosphere, and physical reality of motorsports.
+
+Preferred characteristics:
+- High-quality, full-color racing photography.
+- Natural or professionally graded color.
+- Dynamic compositions and strong subject placement.
+- Racing vehicles, team members, workshops, and technical activities.
+- Cinematic crops that preserve important subjects.
+- Authentic lighting, texture, and environmental detail.
+
+Dark overlays may be applied selectively to improve text readability, but should not unnecessarily obscure the photographs or remove their natural color.
+
+Avoid excessive color grading, artificial red tints, or visual effects that compromise photographic authenticity.
+
+#### Existing Hero Artwork
+
+The approved homepage hero image is located at:
+
+`public/images/miata_background.png`
+
+Browser URL:
+
+`/images/miata_background.png`
+
+This image should be used as the primary homepage hero artwork unless the owner explicitly requests otherwise.
+
+The vehicle occupies the lower-right portion of the composition, leaving darker negative space toward the upper-left.
+
+Position typography and introductory content deliberately within that negative space.
+
+Preserve the vehicle's visibility, photographic detail, and original colors.
+
+Adapt the composition for mobile rather than simply applying the desktop crop to a narrow viewport.
+
+The image is approved visual artwork, not evidence of CCR's actual vehicle ownership, specifications, competition participation, or sponsorship relationships.
+
+### 4.6 Photography Placeholders
+
+**CONFIRMED DEVELOPMENT REQUIREMENT:** Some photography is not yet available. Intentional image placeholders should be used to establish the composition of future photographic content.
+
+These placeholders are design tools, not public-facing announcements.
+
+Appropriate placeholder subjects include:
+- Team photography.
+- Workshop and vehicle preparation.
+- Engineering and technical activities.
+- Vehicle detail photography.
+- Events and team activities.
+
+Placeholder requirements:
+- Use realistic aspect ratios appropriate to the intended photographs.
+- Integrate placeholders naturally into the layout.
+- Use neutral, understated backgrounds.
+- Include discreet descriptive labels such as "Team photo" or "Workshop image."
+- Preserve intended image dimensions across responsive layouts.
+- Avoid making placeholders visually dominant.
+- Do not turn missing photography into large "Coming Soon" or "Details Pending" panels.
+- Do not use generic stock photography as an automatic substitute.
+- Do not generate replacement photographs unless explicitly requested.
+
+When approved photographs become available, they should replace the placeholders without requiring substantial layout redesign.
+
+These instructions apply only to missing photography. Existing approved CCR logos and visual assets must continue to be used.
+
+### 4.7 Brand Assets
+
+Use the supplied official Carolina Collegiate Racing logos.
+
+Preserve:
+- Original proportions.
+- Original colors.
+- Transparency.
+- Correct usage on dark and light backgrounds.
+
+Choose the appropriate logo variation for each placement.
+
+USC affiliation should remain clearly identifiable but secondary to CCR's primary identity.
+
+Do not recreate, distort, recolor, or replace approved logos.
+
+### 4.8 Graphic Elements
+
+The sponsorship packet establishes several recognizable supporting graphic elements:
+- Thin horizontal rules.
+- Numbered section identifiers.
+- Occasional outlined numerals.
+- Subtle technical grids.
+- Checkered racing motifs.
+- Racing Red typographic emphasis.
+
+These elements may be used throughout the website, but selectively.
+
+They should reinforce the motorsports identity without overwhelming the content.
+
+Avoid repeating identical graphic motifs in every section.
+
+The overall design should feel deliberate rather than mechanically assembled from reusable decorations.
+
+### 4.9 Motion and Interaction
+
+Use purposeful, restrained motion.
+
+Appropriate interactions include:
+- Subtle image reveals.
+- Responsive navigation transitions.
+- Understated hover effects.
+- Smooth visual transitions.
+- Limited scroll-based animation.
+
+Do not delay access to important content with unnecessary animations.
+
+Preserve reduced-motion support and prioritize accessibility and performance.
+
+### 4.10 Content Presentation and Visual Authenticity
+
+The website should communicate the identity of a real collegiate motorsports organization rather than resemble a development dashboard.
+
+- Use concrete, verified organizational information.
+- Favor concise explanations over repeated promotional slogans.
+- Present future plans naturally without repeatedly displaying status labels.
+- Do not expose internal content-management classifications such as CONFIRMED, UNKNOWN, or PLANNED throughout the public interface.
+- Do not repeat the organization's development stage unnecessarily.
+- Keep unavailable information understated.
+- Prioritize the team's mission, racing program, people, and opportunities.
+
+The website should be engaging because of its photography, typography, composition, and authentic content—not because of excessive decoration.
+
+### 4.11 Instructions for AI Development Agents
+
+When implementing or revising the website:
+
+1. Read `AGENTS.md`, `CCR_CONTEXT.md`, and `CCR_COLORS.md`.
+2. Consult the sponsorship packet for foundational brand identity.
+3. Follow the latest approved website-specific design instructions where they supersede the packet.
+4. Inspect the existing website before modifying its design.
+5. Preserve successful design elements and working functionality.
+6. Use the existing approved hero artwork.
+7. Retain intentional photography placeholders until real assets are supplied.
+8. Do not source, generate, or invent replacement photography.
+9. Preserve full-color photographic treatment.
+10. Maintain a predominantly dark visual identity with prominent Racing Red.
+11. Use Anton for display headings and Gilroy for body and interface text.
+12. Avoid repetitive layouts, unnecessary technical labels, and prominent development-status messaging.
+13. Review desktop, tablet, and mobile compositions.
+14. Prioritize a cohesive, credible, and memorable website over adding more decorative elements.
+
+**Guiding principle:** Translate CCR's motorsports identity into an authentic, photography-driven digital experience. The website should feel like a living organization with a clear purpose, not a polished placeholder for one.
 
 ## 5. Website design guidance
 
 **PROPOSED:** Use compact navigation, a direct opening statement with sponsorship and story actions, a team introduction with racing imagery, and clear contact/social links. Add competition information, a season timeline, sponsorship options, and sim-racing schedules/results when verified content is available.
+
+Design precedence: Section 4 defines the current approved website visual language. Where earlier design guidance conflicts with Section 4, follow Section 4. The sponsorship packet remains a foundational reference, but full-color photography, predominantly dark compositions, and intentional image placeholders are explicit website-specific requirements.
 
 Provide a clear team introduction, authentic racing imagery, visible sponsorship and recruitment paths, and scannable sections for events and partners. Use the requested CCR pages for deeper information, with an original section order suited to CCR's content.
 
@@ -186,7 +423,7 @@ Resolve these when needed for implementation or publication; their absence does 
 - Actual logo files, approved variants, exact palette, typography, photography, usage permissions, and credits.
 - Individual status and approved presentation for each discussed sponsor/partner.
 - Approved public contact address, inquiry recipient, social links, and inquiry-handling method.
-- Membership eligibility, recruitment process, meeting details, and deadlines.
+- Recruitment process, meeting details, and deadlines.
 - Leadership/member details and finalized departments.
 - Founding date and approved organizational history.
 - Race car identity, generation, ownership/operation details, specifications, and approved imagery.

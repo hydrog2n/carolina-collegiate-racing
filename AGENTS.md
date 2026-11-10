@@ -64,6 +64,20 @@ Do not treat Racing Red as a minor accent color. Follow CCR_COLORS.md for the co
 
 Design decisions should be justified by visual quality, usability, and brand identity rather than convenience.
 
+### Authoritative Visual Reference
+
+Before implementing or modifying website design, read:
+
+1. `CCR_CONTEXT.md` — Organizational facts, website requirements, and design direction.
+2. `CCR_COLORS.md` — Approved color palette and usage rules.
+3. `CCR_Sponsorship_Packet_2026-2027_v4.pdf` — Primary visual reference.
+
+The website must follow the sponsorship packet's established design language, including Anton headings, Gilroy body typography, alternating dark/light compositions, Racing Red emphasis, monochrome motorsports photography, and editorial layout principles.
+
+The sponsorship packet takes precedence over earlier website design inspiration.
+
+Preserve all generated Next.js instructions in `AGENTS.md`.
+
 ## 4. Development Standards
 
 - Write clean, readable, maintainable TypeScript.

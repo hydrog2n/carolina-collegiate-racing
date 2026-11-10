@@ -33,14 +33,14 @@ type CcrLogoProps = {
   variant?: LogoVariant;
   className?: string;
   sizes?: string;
-  priority?: boolean;
+  preload?: boolean;
 };
 
 export function CcrLogo({
   variant = "mark",
   className,
   sizes,
-  priority = false,
+  preload = false,
 }: CcrLogoProps) {
   const logo = logos[variant];
 
@@ -51,7 +51,7 @@ export function CcrLogo({
       width={logo.width}
       height={logo.height}
       sizes={sizes}
-      priority={priority}
+      preload={preload}
       className={className}
     />
   );

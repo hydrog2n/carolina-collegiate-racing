@@ -1,90 +1,166 @@
-import { Eyebrow } from "@/components/ui/eyebrow";
-import { StatusChip } from "@/components/ui/status-chip";
+import { ArrowLink } from "@/components/ui/arrow-link";
+import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
+import { SectionLabel } from "@/components/ui/section-label";
 import { programContent } from "@/content/home";
+import { contact } from "@/content/site";
 
 export function ProgramSection() {
   return (
     <section
       id="program"
       aria-labelledby="program-title"
-      className="relative scroll-mt-24 overflow-hidden border-y border-white/10 bg-ink"
+      className="relative scroll-mt-24 overflow-hidden bg-black"
     >
-      <div className="shell relative py-20 sm:py-28">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
-            <Eyebrow index={programContent.index}>{programContent.label}</Eyebrow>
+      <div className="shell py-12 sm:py-20 lg:py-24">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
+            <SectionLabel
+              index={programContent.index}
+              variant="rule"
+              tone="dark"
+            >
+              {programContent.label}
+            </SectionLabel>
             <h2
               id="program-title"
-              className="mt-8 font-display text-[clamp(3.4rem,6.5vw,6.75rem)] uppercase leading-[0.84] tracking-[0.005em]"
+              className="heading-section mt-5 text-[clamp(2.2rem,5.4vw,4.75rem)] text-white"
             >
-              <span className="block text-white">
-                {programContent.heading[0]}
-              </span>
-              <span className="block text-red">{programContent.heading[1]}</span>
-              <span className="block text-white">
-                {programContent.heading[2]}
-              </span>
+              {programContent.heading[0]}{" "}
+              <span className="text-red">{programContent.heading[1]}</span>
             </h2>
-            <p className="mt-8 max-w-md text-base/7 text-white/60">
+          </div>
+          <div className="lg:col-span-5 lg:pt-10">
+            <p className="max-w-xl text-[16px]/[1.7] text-white/70">
               {programContent.intro}
             </p>
+          </div>
+        </div>
 
-            <div className="mt-10 flex items-center gap-4 border-t border-white/10 pt-5">
-              <div
-                aria-hidden="true"
-                className="checkers h-10 w-20 shrink-0 text-red"
-              />
-              <p className="font-mono text-[9px] uppercase leading-relaxed tracking-[0.16em] text-white/55">
-                Vehicle focus
-                <br />
-                Mazda Miata
+        <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-7">
+            <PhotoPlaceholder
+              label="Workshop / vehicle preparation"
+              aspectClassName="aspect-[4/3] lg:aspect-[16/9]"
+            />
+
+            <div className="mt-8 grid gap-4 border-l-2 border-red pl-5 sm:grid-cols-[1.1fr_0.9fr] sm:gap-8">
+              <p className="heading-support text-[clamp(1.7rem,2.8vw,2.5rem)] text-white">
+                {programContent.buildHeading}
+              </p>
+              <p className="text-[14px]/[1.7] text-white/65">
+                {programContent.buildNote}
               </p>
             </div>
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="border border-white/15 bg-black">
-              <div className="flex items-center justify-between gap-4 border-b border-white/10 px-5 py-3 font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">
-                <span>Program snapshot</span>
-                <span>CCR / 001</span>
-              </div>
-
-              <dl>
-                {programContent.specs.map((spec) => (
-                  <div
-                    key={spec.label}
-                    className="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-white/10 px-5 py-4 last:border-b-0"
+          <div className="lg:col-span-5">
+            <div className="grid gap-4">
+              {programContent.disciplines.map((discipline, index) =>
+                index === 0 ? (
+                  <article key={discipline.name} className="bg-red p-6 sm:p-8">
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.17em] text-white">
+                        {discipline.kicker}
+                      </p>
+                      <span
+                        aria-hidden="true"
+                        className="font-display text-[1.8rem] leading-none text-white/80"
+                      >
+                        {discipline.index}
+                      </span>
+                    </div>
+                    <h3 className="heading-support mt-4 text-[clamp(2rem,4vw,3.25rem)] text-white">
+                      {discipline.name}
+                    </h3>
+                    <p className="mt-4 max-w-md text-[15px]/[1.7] text-white">
+                      {discipline.detail}
+                    </p>
+                  </article>
+                ) : (
+                  <article
+                    key={discipline.name}
+                    className="border border-white/15 bg-graphite p-6 sm:p-8"
                   >
-                    <dt className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">
-                      {spec.label}
-                    </dt>
-                    <dd className="flex flex-wrap items-center justify-end gap-3 text-right text-sm font-medium text-white/85">
-                      {spec.value}
-                      <StatusChip status={spec.status} />
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="text-[11px] font-medium uppercase tracking-[0.17em] text-white/65">
+                        {discipline.kicker}
+                      </p>
+                      <span
+                        aria-hidden="true"
+                        className="font-display text-[1.8rem] leading-none text-white/45"
+                      >
+                        {discipline.index}
+                      </span>
+                    </div>
+                    <h3 className="heading-support mt-4 text-[clamp(2rem,4vw,3.25rem)] text-white">
+                      {discipline.name}
+                    </h3>
+                    <p className="mt-4 max-w-md text-[15px]/[1.7] text-white/65">
+                      {discipline.detail}
+                    </p>
+                  </article>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
 
-              <p className="border-t border-white/10 bg-white/[0.03] px-5 py-4 text-xs/5 text-white/55">
-                {programContent.note}
+        <div className="mt-14 border-t border-white/15 pt-8">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-3">
+              <p className="text-[12px] font-medium uppercase tracking-[0.17em] text-white/65">
+                {programContent.roadAheadLabel}
+              </p>
+              <p className="mt-3 max-w-xs text-[13px]/[1.65] text-white/65">
+                {programContent.roadAheadNote}
               </p>
             </div>
 
-            <div className="mt-6 grid gap-px bg-white/10 sm:grid-cols-2">
-              {programContent.disciplines.map((discipline) => (
-                <div key={discipline.name} className="bg-ink p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display text-2xl uppercase leading-none text-white">
-                      {discipline.name}
+            <div className="lg:col-span-9">
+              <ol className="grid gap-5 sm:grid-cols-3">
+                {programContent.roadAhead.map((item, index) => (
+                  <li
+                    key={item.title}
+                    className="border-t border-white/15 pt-4"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="font-display text-[1.7rem] leading-none text-red"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="mt-2 text-[15px] font-bold text-white">
+                      {item.title}
                     </h3>
-                    <StatusChip status={discipline.status} />
-                  </div>
-                  <p className="mt-4 text-xs/6 text-white/50">
-                    {discipline.detail}
-                  </p>
-                </div>
-              ))}
+                    <p className="mt-1 text-[13px]/[1.6] text-white/65">
+                      {item.detail}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <a
+                  href={contact.instagramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex min-h-11 items-center gap-2 text-[12px] font-medium uppercase tracking-[0.13em] text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                >
+                  {programContent.instagramCta}
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </a>
+                <ArrowLink
+                  href={programContent.joinCta.href}
+                  variant="outline"
+                >
+                  {programContent.joinCta.label}
+                </ArrowLink>
+              </div>
             </div>
           </div>
         </div>

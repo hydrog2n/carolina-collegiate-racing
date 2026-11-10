@@ -1,27 +1,53 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Archivo, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const anton = Anton({
+const anton = localFont({
+  src: "../fonts/Anton-Regular.ttf",
   variable: "--font-anton",
   weight: "400",
-  subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ["Arial Narrow", "Arial", "sans-serif"],
+  adjustFontFallback: "Arial",
 });
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
+const gilroy = localFont({
+  src: [
+    {
+      path: "../fonts/Gilroy-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Gilroy-Heavy.ttf",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-gilroy",
   display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
+  preload: false,
+  fallback: ["Arial", "Helvetica", "sans-serif"],
+  adjustFontFallback: "Arial",
 });
 
 export const metadata: Metadata = {
@@ -67,14 +93,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${anton.variable} ${archivo.variable} ${jetbrainsMono.variable}`}
-    >
-      <body className="flex min-h-full flex-col bg-black text-white antialiased">
+    <html lang="en" className={`${anton.variable} ${gilroy.variable}`}>
+      <body className="flex min-h-full flex-col bg-black font-sans text-white antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-3 focus:font-mono focus:text-xs focus:uppercase focus:tracking-[0.16em] focus:text-black"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-3 focus:text-xs focus:font-semibold focus:uppercase focus:tracking-[0.14em] focus:text-black"
         >
           Skip to content
         </a>

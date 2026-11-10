@@ -70,6 +70,18 @@ Do not substitute garnet for Racing Red in primary interface elements.
 - Avoid excessive gradients, glowing effects, or unrelated saturated colors.
 - Favor strong color blocking, typography, and racing photography.
 
+### Reference Design Language
+
+The official CCR Sponsorship Packet 2026–2027 is the primary reference for the website's visual identity.
+
+Use Racing Red (`#CC2E40`) as the dominant chromatic brand color, paired with substantial black and white compositions.
+
+Alternate dark, atmospheric sections with clean white editorial sections. Do not interpret the dark-background preference as requiring every section to be dark.
+
+Use red selectively but prominently for headline emphasis, graphic details, calls to action, and section identifiers.
+
+Preserve the packet's disciplined color blocking, contrast, and visual hierarchy.
+
 ## Accessibility
 
 - Maintain WCAG AA text contrast standards.

@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Eyebrow } from "@/components/ui/eyebrow";
-import { ArrowIcon } from "@/components/ui/arrow-icon";
+import { ArrowLink } from "@/components/ui/arrow-link";
+import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
+import { SectionLabel } from "@/components/ui/section-label";
 import { teamContent } from "@/content/home";
 
 export function TeamSection() {
@@ -8,68 +8,88 @@ export function TeamSection() {
     <section
       id="team"
       aria-labelledby="team-title"
-      className="relative scroll-mt-24 overflow-hidden bg-black"
+      className="relative scroll-mt-24 overflow-hidden bg-garnet text-white"
     >
-      <div className="shell py-20 sm:py-28">
-        <div className="flex flex-wrap items-start justify-between gap-6 border-b border-white/10 pb-8">
-          <Eyebrow index={teamContent.index}>{teamContent.label}</Eyebrow>
-          <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/55">
-            Student-run / USC
-          </p>
-        </div>
+      <div className="shell py-12 sm:py-20 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-7">
+            <SectionLabel
+              index={teamContent.index}
+              variant="rule"
+              tone="red"
+            >
+              {teamContent.label}
+            </SectionLabel>
 
-        <div className="mt-14 grid gap-14 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5">
             <h2
               id="team-title"
-              className="font-display text-[clamp(3.5rem,7vw,7rem)] uppercase leading-[0.85] tracking-[0.005em]"
+              className="heading-section mt-5 max-w-3xl text-[clamp(2.1rem,4.8vw,4.25rem)]"
             >
-              <span className="block text-white">{teamContent.heading[0]}</span>
-              <span className="block text-red">{teamContent.heading[1]}</span>
-              <span className="block text-red">{teamContent.heading[2]}</span>
+              <span className="block">{teamContent.heading[0]}</span>
+              <span className="block text-white/60">
+                {teamContent.heading[1]}
+              </span>
             </h2>
-            <p className="mt-8 max-w-md text-base/7 text-white/60">
+
+            <p className="mt-6 max-w-2xl text-[16px]/[1.7] text-white/80">
               {teamContent.intro}
             </p>
-            <Link
-              href={teamContent.cta.href}
-              className="group mt-8 inline-flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              {teamContent.cta.label}
-              <ArrowIcon className="text-red transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
 
-          <div className="lg:col-span-7">
-            <div className="border border-white/10">
-              {teamContent.areas.map((area, index) => (
-                <div
-                  key={area.title}
-                  className="group border-b border-white/10 p-5 transition-colors last:border-b-0 hover:bg-white/[0.03] sm:p-6"
-                >
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-[10px] font-semibold tracking-[0.16em] text-white/60">
+            <div className="mt-9 border-t border-white/20 pt-6">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                <p className="text-[12px] font-medium uppercase tracking-[0.17em] text-white/70">
+                  {teamContent.areasLabel}
+                </p>
+                <p className="max-w-xs text-[12px]/[1.55] text-white/65 sm:text-right">
+                  {teamContent.areasNote}
+                </p>
+              </div>
+
+              <div className="mt-6 grid gap-6 sm:grid-cols-3">
+                {teamContent.areas.map((area, index) => (
+                  <div
+                    key={area.title}
+                    className="border-t border-white/20 pt-4"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="text-[11px] font-medium tracking-[0.14em] text-white/60"
+                    >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="font-display text-2xl uppercase leading-none text-white transition-colors group-hover:text-red sm:text-3xl">
+                    <h3 className="mt-2 text-[15px] font-bold text-white">
                       {area.title}
                     </h3>
+                    <p className="mt-1.5 text-[13px]/[1.65] text-white/70">
+                      {area.detail}
+                    </p>
                   </div>
-                  <p className="mt-3 max-w-xl pl-8 text-sm/6 text-white/50">
-                    {area.detail}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            <div className="mt-6 flex items-start gap-3 border-l-2 border-red pl-4">
-              <span
+            <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <ArrowLink href={teamContent.cta.href} variant="inverse">
+                  {teamContent.cta.label}
+                </ArrowLink>
+                <ArrowLink href={teamContent.pageCta.href} variant="outline">
+                  {teamContent.pageCta.label}
+                </ArrowLink>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5">
+            <div className="relative bg-black p-3 lg:mt-12">
+              <div
                 aria-hidden="true"
-                className="mt-2 h-1.5 w-1.5 shrink-0 bg-red"
+                className="absolute -right-2 -top-2 h-10 w-10 border-r-2 border-t-2 border-white/50"
               />
-              <p className="max-w-xl text-xs/6 text-white/55">
-                {teamContent.rosterNote}
-              </p>
+              <PhotoPlaceholder
+                label="Team portrait"
+                aspectClassName="aspect-[16/10] lg:aspect-[4/3]"
+              />
             </div>
           </div>
         </div>
