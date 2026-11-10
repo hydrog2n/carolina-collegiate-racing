@@ -76,8 +76,8 @@ export const eventsPage = {
   intro:
     "Competition entries, team events, and sim racing activities will be listed here as they are scheduled.",
   meta: [
-    { label: "Circuit racing", value: "Preparing" },
-    { label: "Sim racing", value: "Planned" },
+    { label: "Circuit racing", value: "MX-5 Cup procurement" },
+    { label: "Sim racing", value: "CRS iRacing" },
   ],
   emptyLabel: "Upcoming",
   emptyHeading: "No events on the calendar yet.",
@@ -87,14 +87,14 @@ export const eventsPage = {
   directionsHeading: "Two ways to develop racecraft.",
   directions: [
     {
-      title: "Wheel-to-wheel circuit racing",
-      detail:
-        "CCR is pursuing wheel-to-wheel road racing and preparing the car and crew for circuit competition.",
-    },
-    {
       title: "Sim racing",
       detail:
-        "Sim racing is a planned arena for developing racecraft. No year-round competition schedule is established.",
+        "CCR is currently competing in the CRS iRacing Championship as part of its ongoing sim racing development.",
+    },
+    {
+      title: "Wheel-to-wheel circuit racing",
+      detail:
+        "CCR is in the process of procuring an MX-5 Cup car and preparing the crew for wheel-to-wheel competition.",
     },
   ],
   updatesLabel: "Instagram",

@@ -57,7 +57,7 @@ export function PartnersSection() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative flex h-full flex-col justify-between bg-ink p-6 text-white sm:p-8">
+            <div className="relative flex h-full flex-col justify-between rounded-[var(--radius-lg)] bg-ink p-6 text-white shadow-[0_12px_30px_rgba(0,0,0,0.2)] sm:p-8">
               <div
                 aria-hidden="true"
                 className="absolute inset-x-0 top-0 h-1 bg-red"

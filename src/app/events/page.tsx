@@ -82,7 +82,7 @@ export default function EventsPage() {
             {eventsPage.directions.map((direction, index) => (
               <article
                 key={direction.title}
-                className={`p-6 sm:p-8 ${
+                className={`rounded-[var(--radius-lg)] p-6 shadow-[0_12px_30px_rgba(0,0,0,0.18)] sm:p-8 ${
                   index === 0
                     ? "bg-red text-white"
                     : "border border-white/15 bg-graphite text-white"
@@ -94,7 +94,7 @@ export default function EventsPage() {
                       index === 0 ? "text-white" : "text-white/65"
                     }`}
                   >
-                    {index === 0 ? "Competitive direction" : "Planned arena"}
+                    {index === 0 ? "Active arena" : "In procurement"}
                   </p>
                   <span
                     aria-hidden="true"

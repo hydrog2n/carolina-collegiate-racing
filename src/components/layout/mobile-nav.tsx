@@ -88,7 +88,7 @@ export function MobileNav() {
         aria-controls={open ? "mobile-navigation" : undefined}
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
-        className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-3 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4 sm:text-[12px]"
+        className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-sm)] border-2 border-white/30 px-3 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4 sm:text-[12px]"
       >
         Menu
         <span aria-hidden="true" className="flex flex-col gap-1">
@@ -125,7 +125,7 @@ export function MobileNav() {
                 ref={closeRef}
                 type="button"
                 onClick={() => closeMenu()}
-                className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-3 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4 sm:text-[12px]"
+                className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-sm)] border-2 border-white/30 px-3 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4 sm:text-[12px]"
               >
                 Close
                 <span aria-hidden="true" className="text-lg leading-none">

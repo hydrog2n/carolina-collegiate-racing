@@ -117,10 +117,10 @@ export default function StoryPage() {
               {[
                 { label: "Vehicle focus", value: "Mazda MX-5 Miatas" },
                 {
-                    label: "Competitive direction",
-                    value: "Wheel-to-wheel circuit racing",
+                    label: "Sim racing",
+                    value: "CRS iRacing Championship",
                   },
-                  { label: "Sim racing", value: "Planned arena" },
+                  { label: "Circuit racing", value: "MX-5 Cup procurement" },
                 ].map((item) => (
                 <div
                   key={item.label}

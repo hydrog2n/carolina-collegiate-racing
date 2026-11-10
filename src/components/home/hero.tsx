@@ -82,6 +82,9 @@ export function Hero() {
             <ArrowLink href={heroContent.secondaryCta.href} variant="outline">
               {heroContent.secondaryCta.label}
             </ArrowLink>
+          </div>
+
+          <div className="intro-rise mt-4 flex justify-center sm:justify-start" style={{ animationDelay: "420ms" }}>
             <Link
               href={heroContent.tertiaryCta.href}
               className="inline-flex min-h-11 items-center gap-2 px-1 text-[12px] font-medium uppercase tracking-[0.14em] text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"

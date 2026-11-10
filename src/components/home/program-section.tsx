@@ -9,7 +9,7 @@ export function ProgramSection() {
     <section
       id="program"
       aria-labelledby="program-title"
-      className="relative scroll-mt-24 overflow-hidden bg-black"
+      className="relative scroll-mt-24 overflow-hidden bg-black ambient-red-light"
     >
       <div className="shell py-12 sm:py-20 lg:py-24">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
@@ -57,7 +57,7 @@ export function ProgramSection() {
             <div className="grid gap-4">
               {programContent.disciplines.map((discipline, index) =>
                 index === 0 ? (
-                  <article key={discipline.name} className="bg-red p-6 sm:p-8">
+                  <article key={discipline.name} className="rounded-[var(--radius-lg)] bg-red p-6 shadow-[0_12px_30px_rgba(0,0,0,0.18)] sm:p-8">
                     <div className="flex items-center justify-between gap-4">
                       <p className="text-[11px] font-medium uppercase tracking-[0.17em] text-white">
                         {discipline.kicker}
@@ -79,7 +79,7 @@ export function ProgramSection() {
                 ) : (
                   <article
                     key={discipline.name}
-                    className="border border-white/15 bg-graphite p-6 sm:p-8"
+                    className="rounded-[var(--radius-lg)] border border-white/15 bg-graphite p-6 shadow-[0_12px_30px_rgba(0,0,0,0.14)] sm:p-8"
                   >
                     <div className="flex items-center justify-between gap-4">
                       <p className="text-[11px] font-medium uppercase tracking-[0.17em] text-white/65">

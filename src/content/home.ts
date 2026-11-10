@@ -60,17 +60,17 @@ export const programContent = {
   disciplines: [
     {
       index: "01",
-      kicker: "Competitive direction",
-      name: "Circuit racing",
+      kicker: "Active arena",
+      name: "Sim racing",
       detail:
-        "CCR is pursuing wheel-to-wheel road racing. The car and crew are being prepared for circuit competition.",
+        "CCR is currently competing in the CRS iRacing Championship as part of its ongoing racecraft development.",
     },
     {
       index: "02",
-      kicker: "Planned arena",
-      name: "Sim racing",
+      kicker: "In procurement",
+      name: "Circuit racing",
       detail:
-        "Sim racing is being explored as another way to develop racecraft while the car program is built.",
+        "CCR is in the process of procuring an MX-5 Cup car and preparing the crew for wheel-to-wheel competition.",
     },
   ],
   roadAheadLabel: "The road ahead",

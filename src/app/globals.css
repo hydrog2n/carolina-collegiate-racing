@@ -14,6 +14,9 @@
   --background: var(--ccr-black);
   --foreground: var(--ccr-white);
   --checker-size: 12px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
 }
 
 @theme inline {
@@ -80,6 +83,61 @@
     max-width: 80rem;
     margin-inline: auto;
     padding-inline: clamp(1.25rem, 4.5vw, 5rem);
+  }
+
+  .bg-red {
+    background-image: linear-gradient(
+      180deg,
+      #cc2e40 0%,
+      #b42032 24%,
+      #73000a 100%
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .bg-garnet {
+    background-image: linear-gradient(180deg, #7d0010 0%, #73000a 100%);
+  }
+
+  .ambient-red-light {
+    background-image:
+      radial-gradient(
+        circle at 84% 18%,
+        rgba(204, 46, 64, 0.09),
+        transparent 34%
+      ),
+      linear-gradient(180deg, #000000 0%, #050505 100%);
+  }
+
+  .cursor-glow-link {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: var(--ccr-garnet);
+    background-image: none;
+  }
+
+  .cursor-glow-link::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      150px circle at var(--pointer-x, 50%) var(--pointer-y, 50%),
+      rgba(204, 46, 64, 0.96),
+      rgba(204, 46, 64, 0.52) 38%,
+      transparent 76%
+    );
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease-out;
+  }
+
+  @media (hover: hover) {
+    .cursor-glow-link:hover::before {
+      opacity: 1;
+    }
   }
 
   .heading-hero,
