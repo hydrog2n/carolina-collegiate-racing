@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CcrLogo } from "@/components/brand/ccr-logo";
-import { UscMark } from "@/components/brand/usc-mark";
+import { UscMark, UscMarkDark } from "@/components/brand/usc-mark";
 import {
   contact,
   footerNav,
@@ -15,8 +15,6 @@ export function SiteFooter() {
       id="contact"
       className="relative scroll-mt-24 overflow-hidden border-t border-white/10 bg-ink"
     >
-      <div aria-hidden="true" className="h-1 bg-red" />
-
       <div className="shell py-14 sm:py-18">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-5">
@@ -37,7 +35,7 @@ export function SiteFooter() {
             </p>
 
             <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
-              <UscMark className="h-11 w-10 shrink-0" />
+              <UscMarkDark className="h-11 w-10 shrink-0" />
               <p className="text-[11px] font-medium uppercase leading-relaxed tracking-[0.13em] text-white/65">
                 {site.affiliation}
                 <br />
@@ -96,14 +94,6 @@ export function SiteFooter() {
             >
               Instagram {contact.instagramHandle}
             </a>
-
-            <Link
-              href="/contact"
-              className="mt-2 inline-flex items-center gap-2 text-[14px] font-medium text-white/80 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Contact page
-              <span aria-hidden="true">→</span>
-            </Link>
 
             <div className="mt-7 border-t border-white/10 pt-5">
               <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/65">

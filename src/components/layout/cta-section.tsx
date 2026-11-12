@@ -21,17 +21,17 @@ const toneStyles: Record<
   }
 > = {
   red: {
-    background: "bg-red text-white",
+    background: "bg-garnet ambient-red-highlight text-white",
     labelTone: "red",
     body: "text-white",
   },
   garnet: {
-    background: "bg-garnet text-white",
+    background: "bg-black ambient-red-light text-white",
     labelTone: "red",
     body: "text-white/80",
   },
   ink: {
-    background: "bg-ink text-white",
+    background: "bg-ink text-white ambient-gray-light",
     labelTone: "dark",
     body: "text-white/70",
   },

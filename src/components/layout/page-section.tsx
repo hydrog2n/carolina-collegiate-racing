@@ -24,7 +24,7 @@ const toneStyles: Record<
   }
 > = {
   black: {
-    background: "bg-black text-white",
+    background: "bg-black text-white ambient-gray-light",
     labelTone: "dark",
     muted: "text-white/70",
     border: "border-white/15",
@@ -36,7 +36,7 @@ const toneStyles: Record<
     border: "border-black/15",
   },
   garnet: {
-    background: "bg-garnet text-white",
+    background: "bg-garnet text-white ambient-red-highlight",
     labelTone: "red",
     muted: "text-white/75",
     border: "border-white/20",
@@ -61,7 +61,7 @@ export function PageSection({
       id={id}
       className={`relative scroll-mt-24 overflow-hidden ${styles.background} ${className}`}
     >
-      <div className="shell py-16 sm:py-20 lg:py-24">
+      <div className="shell py-16 sm:py-20 lg:py-12">
         {hasHeader ? (
           <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">

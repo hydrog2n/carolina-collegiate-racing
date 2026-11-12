@@ -8,11 +8,11 @@ export function TeamSection() {
     <section
       id="team"
       aria-labelledby="team-title"
-      className="relative scroll-mt-24 overflow-hidden bg-garnet text-white"
+      className="relative scroll-mt-24 overflow-hidden bg-garnet ambient-red-highlight text-white"
     >
       <div className="shell py-12 sm:py-20 lg:py-24">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-7">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-6">
             <SectionLabel
               index={teamContent.index}
               variant="rule"
@@ -34,13 +34,31 @@ export function TeamSection() {
             <p className="mt-6 max-w-2xl text-[16px]/[1.7] text-white/80">
               {teamContent.intro}
             </p>
+            <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <ArrowLink href={teamContent.cta.href} variant="inverse">
+                  {teamContent.cta.label}
+                </ArrowLink>
+                <ArrowLink href={teamContent.pageCta.href} variant="outline">
+                  {teamContent.pageCta.label}
+                </ArrowLink>
+              </div>
+            </div>
+          </div>
 
-            <div className="mt-9 border-t border-white/20 pt-6">
+          <div className="lg:col-span-6">
+            <PhotoPlaceholder
+                label="Team portrait"
+                aspectClassName="aspect-[16/10] lg:aspect-[4/3]"
+              />
+          </div>
+        </div>
+        <div className="mt-12 border-t border-white/20 pt-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
                 <p className="text-[12px] font-medium uppercase tracking-[0.17em] text-white/70">
                   {teamContent.areasLabel}
                 </p>
-                <p className="max-w-xs text-[12px]/[1.55] text-white/65 sm:text-right">
+                <p className=" text-[12px]/[1.55] text-white/65 sm:text-right">
                   {teamContent.areasNote}
                 </p>
               </div>
@@ -53,7 +71,7 @@ export function TeamSection() {
                   >
                     <span
                       aria-hidden="true"
-                      className="text-[11px] font-medium tracking-[0.14em] text-white/60"
+                      className="font-display text-[1.7rem] leading-none text-white"
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
@@ -67,32 +85,6 @@ export function TeamSection() {
                 ))}
               </div>
             </div>
-
-            <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <ArrowLink href={teamContent.cta.href} variant="inverse">
-                  {teamContent.cta.label}
-                </ArrowLink>
-                <ArrowLink href={teamContent.pageCta.href} variant="outline">
-                  {teamContent.pageCta.label}
-                </ArrowLink>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5">
-            <div className="relative bg-black p-3 lg:mt-12">
-              <div
-                aria-hidden="true"
-                className="absolute -right-2 -top-2 h-10 w-10 border-r-2 border-t-2 border-white/50"
-              />
-              <PhotoPlaceholder
-                label="Team portrait"
-                aspectClassName="aspect-[16/10] lg:aspect-[4/3]"
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

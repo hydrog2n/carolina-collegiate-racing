@@ -1,4 +1,5 @@
 import { ArrowLink } from "@/components/ui/arrow-link";
+import { GradientHeadingText } from "@/components/ui/gradient-heading-text";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { SectionLabel } from "@/components/ui/section-label";
 import { programContent } from "@/content/home";
@@ -9,7 +10,7 @@ export function ProgramSection() {
     <section
       id="program"
       aria-labelledby="program-title"
-      className="relative scroll-mt-24 overflow-hidden bg-black ambient-red-light"
+      className="relative scroll-mt-24 overflow-hidden bg-black ambient-gray-light"
     >
       <div className="shell py-12 sm:py-20 lg:py-24">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
@@ -26,7 +27,9 @@ export function ProgramSection() {
               className="heading-section mt-5 text-[clamp(2.2rem,5.4vw,4.75rem)] text-white"
             >
               {programContent.heading[0]}{" "}
-              <span className="text-red">{programContent.heading[1]}</span>
+              <GradientHeadingText className="text-red">
+                {programContent.heading[1]}
+              </GradientHeadingText>
             </h2>
           </div>
           <div className="lg:col-span-5 lg:pt-10">
@@ -105,10 +108,10 @@ export function ProgramSection() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-white/15 pt-8">
+        <div className="mt-20">
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-3">
-              <p className="text-[12px] font-medium uppercase tracking-[0.17em] text-white/65">
+              <p className="heading-support text-[36px]">
                 {programContent.roadAheadLabel}
               </p>
               <p className="mt-3 max-w-xs text-[13px]/[1.65] text-white/65">
@@ -141,24 +144,16 @@ export function ProgramSection() {
 
               <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <a
-                  href={contact.instagramUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="group inline-flex min-h-11 items-center gap-2 text-[12px] font-medium uppercase tracking-[0.13em] text-white/70 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
-                  {programContent.instagramCta}
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
                 </a>
                 <ArrowLink
-                  href={programContent.joinCta.href}
+                  href={contact.instagramUrl}
                   variant="outline"
                 >
-                  {programContent.joinCta.label}
+                  {programContent.instagramCta}
                 </ArrowLink>
               </div>
             </div>

@@ -23,13 +23,13 @@ const toneStyles: Record<
   }
 > = {
   ink: {
-    background: "bg-ink text-white",
+    background: "bg-ink text-white ambient-gray-light",
     labelTone: "dark",
     muted: "text-white/70",
     border: "border-white/15",
   },
   garnet: {
-    background: "bg-garnet text-white",
+    background: "bg-garnet text-white ambient-red-highlight",
     labelTone: "red",
     muted: "text-white/75",
     border: "border-white/20",
@@ -53,7 +53,7 @@ export function PageIntro({
       aria-labelledby="page-title"
       className={`relative scroll-mt-24 overflow-hidden ${styles.background}`}
     >
-      <div className="shell py-14 sm:py-18 lg:py-24">
+      <div className="shell py-14 sm:py-18 lg:py-10">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-8">
             <SectionLabel
@@ -71,7 +71,7 @@ export function PageIntro({
             </h1>
           </div>
 
-          <div className="lg:col-span-4 lg:pt-14">
+          <div className="lg:col-span-4 lg:pt-8 lg:pb-4">
             <p
               className={`max-w-xl text-[16px]/[1.7] ${styles.muted} lg:text-[17px]/[1.7]`}
             >
@@ -89,7 +89,7 @@ export function PageIntro({
 
       {meta && meta.length > 0 ? (
         <div className={`border-t ${styles.border}`}>
-          <dl className="shell grid grid-cols-1 gap-4 py-5 sm:grid-cols-3 sm:gap-8">
+          <dl className="shell grid grid-cols-1 gap-4 py-5 sm:grid-cols-3 sm:gap-8 ">
             {meta.map((item) => (
               <div key={item.label}>
                 <dt className="text-[10.5px] font-medium uppercase tracking-[0.16em] text-white/55">

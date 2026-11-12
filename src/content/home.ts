@@ -15,7 +15,7 @@ export const heroContent = {
   imageNote: "Illustrative racing image",
 } as const;
 
-export const storyContent = {
+export const aboutContent = {
   index: "01",
   label: "Who we are",
   heading: ["Build cars.", "Develop people."],
@@ -44,7 +44,7 @@ export const storyContent = {
         "Work toward organizing racing events and collegiate competitions.",
     },
   ],
-  cta: { label: "Read our story", href: "/story" },
+  cta: { label: "About us", href: "/about" },
   sponsorCta: { label: "Sponsor the program", href: "/partners" },
 } as const;
 
@@ -114,7 +114,7 @@ export const teamContent = {
         "Plan the work, prepare equipment, and keep the program organized.",
     },
     {
-      title: "Story & partnerships",
+      title: "Communications & partnerships",
       detail:
         "Communicate the build and build relationships across the motorsport community.",
     },
@@ -125,7 +125,7 @@ export const teamContent = {
 
 export const partnersContent = {
   index: "04",
-  label: "Partners",
+  label: "Sponsor Us",
   heading: ["Partner with", "CCR."],
   intro:
     "Sponsorship supports student learning and the work of establishing CCR's racing program. The 2026–27 packet outlines the tiers, recognition, and where contributions go.",

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { CtaSection } from "@/components/layout/cta-section";
-import { PageIntro } from "@/components/layout/page-intro";
 import { PageSection } from "@/components/layout/page-section";
 import { SectionScrollspy } from "@/components/layout/section-scrollspy";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { teamPage } from "@/content/pages";
 import { contact, mailto, teamSectionLinks } from "@/content/site";
+import { GradientHeadingText } from "@/components/ui/gradient-heading-text";
 
 export const metadata: Metadata = {
   title: "The Team",
@@ -18,75 +18,19 @@ export default function TeamPage() {
   return (
     <main id="main-content">
       <SectionScrollspy items={teamSectionLinks} />
-      <PageIntro
+      {/* <PageIntro
         index={teamPage.index}
         label={teamPage.label}
         title={teamPage.title}
         intro={teamPage.intro}
-        meta={teamPage.meta}
         actions={
           <>
             <ArrowLink href={teamPage.primaryCta.href}>
               {teamPage.primaryCta.label}
             </ArrowLink>
-            <ArrowLink href={teamPage.secondaryCta.href} variant="outline">
-              {teamPage.secondaryCta.label}
-            </ArrowLink>
           </>
         }
-      />
-
-      <PageSection
-        id="work-areas"
-        tone="smoke"
-        label={teamPage.areasLabel}
-        title={teamPage.areasHeading}
-        intro={teamPage.areasBody}
-      >
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-7">
-            <div className="grid gap-0">
-              {teamPage.areas.map((area, index) => (
-                <article
-                  key={area.title}
-                  className="grid grid-cols-[auto_1fr] gap-4 border-t border-black/15 py-5 sm:gap-6 sm:py-6"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="font-display text-[1.8rem] leading-none text-red"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-[17px] font-bold leading-snug">
-                      {area.title}
-                    </h3>
-                    <p className="mt-2 max-w-lg text-[14px]/[1.7] text-black/65">
-                      {area.detail}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <p className="mt-6 border-t border-black/15 pt-5 text-[13px]/[1.65] text-black/65">
-              Membership is open to University of South Carolina students and
-              faculty.
-            </p>
-          </div>
-
-          <div className="grid gap-4 lg:col-span-5">
-            <PhotoPlaceholder
-              label={teamPage.photoLabel}
-              aspectClassName="aspect-[4/3]"
-            />
-            <PhotoPlaceholder
-              label={teamPage.workshopLabel}
-              aspectClassName="aspect-[16/10]"
-            />
-          </div>
-        </div>
-      </PageSection>
+      /> */}
 
       <PageSection
         id="member-profiles"
@@ -94,27 +38,92 @@ export default function TeamPage() {
         label={teamPage.rosterLabel}
         title={teamPage.rosterHeading}
         intro={teamPage.rosterBody}
-      />
+      >
+        <div className="space-y-12 sm:space-y-14">
+            <PhotoPlaceholder
+              label={teamPage.photoLabel}
+              aspectClassName="aspect-[21/9]"
+            />
+          </div>
+        <div className="space-y-12 sm:space-y-14 mt-12 ">
+          {teamPage.rosterGroups.map((group) => (
+            <section
+              key={group.id}
+              id={group.id}
+              aria-labelledby={`${group.id}-heading`}
+              className="relative space-y-5 scroll-mt-32"
+            >
+              <div className="flex items-center gap-4">
+                <h3
+                  id={`${group.id}-heading`}
+                  className="heading-support text-xl sm:text-2xl"
+                >
+                  {group.name}
+                </h3>
+                <span
+                  aria-hidden="true"
+                  className="h-px flex-1 bg-white/15"
+                />
+              </div>
+
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-4 sm:gap-x-5 lg:gap-x-6">
+                {group.members.map((member) => (
+                  <li key={member.id}>
+                    <figure className="transition-transform duration-300 ease-out hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+                      <div
+                        role="img"
+                        aria-label={`Portrait placeholder for ${member.name}`}
+                        className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-md)] bg-graphite"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 180 300"
+                          preserveAspectRatio="xMidYMax slice"
+                          className="absolute inset-0 h-full w-full"
+                        >
+                          <circle cx="90" cy="94" r="36" fill="#343438" />
+                          <path
+                            d="M22 300v-34c0-57 30-97 68-97s68 40 68 97v34H22Z"
+                            fill="#343438"
+                          />
+                        </svg>
+                      </div>
+                      <figcaption className="lg:pl-2 mt-4">
+                        <p className="font-display text-[1.2rem] leading-none text-white uppercase sm:text-[1.4rem]">
+                          {member.name}
+                        </p>
+                        <p className="mt-1.5 text-[12px]/[1.4] font-medium text-white/65">
+                          {member.position}
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      </PageSection>
 
       <CtaSection
         id="join-cta"
-        tone="garnet"
+        tone="smoke"
         label="Join the team"
         heading={
           <>
             There is work to do.{" "}
-            <span className="text-white/60">Start with an email.</span>
+            <GradientHeadingText className="text-red">Start with an email.</GradientHeadingText>
           </>
         }
         body="Membership is open to University of South Carolina students and faculty."
       >
         <ArrowLink
           href={mailto(contact.joinSubject)}
-          variant="inverse"
+          variant="solid"
         >
           Email CCR
         </ArrowLink>
-        <ArrowLink href="/join" variant="outline">
+        <ArrowLink href="/join" variant="light">
           Membership details
         </ArrowLink>
       </CtaSection>

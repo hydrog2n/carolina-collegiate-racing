@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ScrollReveal } from "@/components/layout/scroll-reveal";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -17,11 +18,6 @@ const anton = localFont({
 
 const gilroy = localFont({
   src: [
-    {
-      path: "../fonts/Gilroy-Light.ttf",
-      weight: "300",
-      style: "normal",
-    },
     {
       path: "../fonts/Gilroy-Regular.ttf",
       weight: "400",
@@ -102,7 +98,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SiteHeader />
-        <div className="flex flex-1 flex-col">{children}</div>
+        <div className="flex flex-1 flex-col">
+          <ScrollReveal>{children}</ScrollReveal>
+        </div>
         <SiteFooter />
       </body>
     </html>

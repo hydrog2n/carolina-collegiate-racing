@@ -126,9 +126,6 @@ export default function JoinPage() {
         >
           Email CCR
         </ArrowLink>
-        <ArrowLink href="/contact" variant="outline">
-          Contact CCR
-        </ArrowLink>
       </CtaSection>
     </main>
   );

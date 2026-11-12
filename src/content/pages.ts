@@ -1,6 +1,6 @@
-export const storyPage = {
+export const aboutPage = {
   index: "01",
-  label: "Our story",
+  label: "About us",
   title: "A team in the making.",
   intro:
     "Carolina Collegiate Racing is an officially recognized, student-run motorsports organization at the University of South Carolina. We are building a Miata-based race program and the team that will run it.",
@@ -29,15 +29,21 @@ export const storyPage = {
   secondaryCta: { label: "Join CCR", href: "/join" },
 } as const;
 
+const placeholderTeamMembers = ["01", "02", "03", "04"].map((id) => ({
+  id,
+  name: "Name placeholder",
+  position: "Position placeholder",
+}));
+
 export const teamPage = {
   index: "02",
-  label: "The team",
+  label: "Team",
   title: "The people behind the car.",
   intro:
     "CCR is built by students taking on the engineering, logistics, and communications work that keeps a race program moving. Membership is open to University of South Carolina students and faculty.",
   meta: [
     { label: "Membership", value: "USC students and faculty" },
-    { label: "Work areas", value: "Engineering, operations, story" },
+    { label: "Work areas", value: "Engineering, operations, communications" },
   ],
   areasLabel: "Where students can contribute",
   areasHeading: "Work across the program.",
@@ -55,14 +61,26 @@ export const teamPage = {
         "Plan the work, organize equipment, and build the processes a race team needs.",
     },
     {
-      title: "Story & partnerships",
+      title: "Communications & partnerships",
       detail:
         "Document the build, communicate the program, and develop relationships across motorsport.",
     },
   ],
-  rosterLabel: "Member profiles",
-  rosterHeading: "Member profiles.",
-  rosterBody: "Member names and leadership details are not listed here.",
+  rosterLabel: "Our roster",
+  rosterHeading: "Meet the team.",
+  rosterBody:
+    "Names, positions, and portraits are placeholders until confirmed team information and photos are available.",
+  rosterGroups: [
+    { id: "exec", name: "Executive Board", members: placeholderTeamMembers },
+    { id: "business", name: "Business", members: placeholderTeamMembers },
+    { id: "marketing", name: "Marketing", members: placeholderTeamMembers },
+    { id: "technical", name: "Technical", members: placeholderTeamMembers },
+    { id: "trackside-operations", name: "Trackside Operations", members: placeholderTeamMembers },
+    { id: "race-engineers", name: "Race Engineers/Strategists", members: placeholderTeamMembers },
+    { id: "sim-team", name: "Sim Team", members: placeholderTeamMembers },
+    { id: "safety", name: "Safety", members: placeholderTeamMembers },
+    { id: "driver-controls", name: "Driver Controls/Drivers", members: placeholderTeamMembers },
+  ],
   photoLabel: "Team portrait",
   workshopLabel: "Workshop and preparation",
   primaryCta: { label: "Join the team", href: "/join" },
@@ -102,7 +120,6 @@ export const eventsPage = {
   updatesBody:
     "Follow the team's Instagram account or email CCR with a question about upcoming activities.",
   primaryCta: { label: "Follow on Instagram", href: "" },
-  secondaryCta: { label: "Contact CCR", href: "/contact" },
 } as const;
 
 export const partnersPage = {
@@ -127,7 +144,6 @@ export const partnersPage = {
   stepsLabel: "Become a sponsor",
   stepsHeading: "Three steps to support the program.",
   primaryCta: { label: "Email CCR", href: "" },
-  secondaryCta: { label: "Contact CCR", href: "/contact" },
 } as const;
 
 export const joinPage = {
@@ -150,9 +166,9 @@ export const joinPage = {
         "Keep the work organized, prepare equipment, and help the team operate like a race team.",
     },
     {
-      title: "Story & partnerships",
+      title: "Communications & partnerships",
       detail:
-        "Tell the story of the build and develop relationships with the motorsport community.",
+        "Share updates about the build and develop relationships with the motorsport community.",
     },
   ],
   howLabel: "How to get involved",
@@ -164,52 +180,12 @@ export const joinPage = {
   secondaryCta: { label: "Follow on Instagram", href: "" },
 } as const;
 
-export const contactPage = {
-  index: "06",
-  label: "Contact",
-  title: "Contact CCR.",
-  intro:
-    "For questions about the program, sponsorship, or membership, email the team.",
-  meta: [
-    { label: "Affiliation", value: "University of South Carolina" },
-    { label: "Instagram", value: "@carolina_collegiate_racing" },
-  ],
-  channelsLabel: "Email the team",
-  channels: [
-    {
-      label: "General inquiries",
-      detail:
-        "For questions about the organization, the program, or anything that does not fit the other paths.",
-      subject: "general",
-      cta: "Email CCR",
-    },
-    {
-      label: "Membership",
-      detail:
-        "For University of South Carolina students and faculty interested in joining.",
-      subject: "join",
-      cta: "Ask about joining",
-    },
-    {
-      label: "Sponsorship",
-      detail:
-        "For the 2026–27 sponsorship packet, tiers, benefits, and partnership questions.",
-      subject: "sponsorship",
-      cta: "Ask about sponsorship",
-    },
-  ],
-  instagramLabel: "Instagram",
-  instagramBody:
-    "Connect with Carolina Collegiate Racing on Instagram.",
-} as const;
-
 export const galleryPage = {
-  index: "07",
+  index: "06",
   label: "Gallery",
-  title: "Photo & video gallery.",
+  title: "Photo & video gallery",
   intro:
     "A place for photographs and video from Carolina Collegiate Racing.",
-  meta: [{ label: "Updates", value: "Instagram" }],
   emptyLabel: "Gallery",
   emptyHeading: "No gallery items yet.",
   emptyBody:
@@ -228,7 +204,14 @@ export const galleryPage = {
       title: "The team",
       detail: "Members and team activities.",
     },
+    {
+      title: "Education & outreach",
+      detail: "Members and team activities.",
+    },
+    {
+      title: "Fundraising & sponsorship",
+      detail: "Members and team activities.",
+    },
   ],
   primaryCta: { label: "Follow on Instagram", href: "" },
-  secondaryCta: { label: "Contact CCR", href: "/contact" },
 } as const;

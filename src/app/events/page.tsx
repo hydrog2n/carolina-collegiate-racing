@@ -6,7 +6,7 @@ import { SectionScrollspy } from "@/components/layout/section-scrollspy";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { eventsPage } from "@/content/pages";
-import { contact, eventsSectionLinks } from "@/content/site";
+import { contact, eventsSectionLinks, mailto } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Events & Schedule",
@@ -24,6 +24,7 @@ export default function EventsPage() {
         title={eventsPage.title}
         intro={eventsPage.intro}
         meta={eventsPage.meta}
+        tone = "garnet"
         actions={
           <>
             <ArrowLink
@@ -32,8 +33,8 @@ export default function EventsPage() {
             >
               Follow on Instagram
             </ArrowLink>
-            <ArrowLink href="/contact" variant="outline">
-              Contact CCR
+            <ArrowLink href={mailto(contact.generalSubject)} variant="outline">
+              Email CCR
             </ArrowLink>
           </>
         }
@@ -141,8 +142,8 @@ export default function EventsPage() {
         >
           Follow on Instagram
         </ArrowLink>
-        <ArrowLink href="/contact" variant="outline">
-          Contact CCR
+        <ArrowLink href={mailto(contact.generalSubject)} variant="outline">
+          Email CCR
         </ArrowLink>
       </CtaSection>
     </main>

@@ -3,16 +3,17 @@ import { ArrowLink } from "@/components/ui/arrow-link";
 import { SectionLabel } from "@/components/ui/section-label";
 import { joinContent } from "@/content/home";
 import { contact, mailto } from "@/content/site";
+import { GradientHeadingText } from "../ui/gradient-heading-text";
 
 export function JoinSection() {
   return (
     <section
       id="join"
       aria-labelledby="join-title"
-      className="relative scroll-mt-24 overflow-hidden bg-red text-white"
+      className="relative scroll-mt-24 overflow-hidden bg-black ambient-red-light text-white"
     >
       <div className="shell py-12 sm:py-20 lg:py-24">
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-0">
           <div className="lg:col-span-7">
             <SectionLabel index={joinContent.index} tone="red">
               {joinContent.label}
@@ -24,9 +25,9 @@ export function JoinSection() {
               <span className="block text-white">
                 {joinContent.heading[0]}
               </span>
-              <span className="block text-black">
+              <GradientHeadingText className="block text-red">
                 {joinContent.heading[1]}
-              </span>
+              </GradientHeadingText>
             </h2>
           </div>
 
@@ -39,7 +40,7 @@ export function JoinSection() {
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ArrowLink href={mailto(contact.joinSubject)} variant="inverse">
+              <ArrowLink href={mailto(contact.joinSubject)} variant="solid">
                 {joinContent.emailCtaLabel}
               </ArrowLink>
               <ArrowLink href={contact.instagramUrl} variant="outline">
@@ -63,10 +64,6 @@ export function JoinSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div aria-hidden="true" className="relative h-2 bg-black/15">
-        <div className="checkers absolute inset-0 text-black/20" />
       </div>
     </section>
   );

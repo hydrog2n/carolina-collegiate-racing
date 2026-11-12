@@ -6,7 +6,7 @@ import { SectionScrollspy } from "@/components/layout/section-scrollspy";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { galleryPage } from "@/content/pages";
-import { contact, gallerySectionLinks } from "@/content/site";
+import { contact, gallerySectionLinks, mailto } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -23,7 +23,7 @@ export default function GalleryPage() {
         label={galleryPage.label}
         title={galleryPage.title}
         intro={galleryPage.intro}
-        meta={galleryPage.meta}
+        tone = "garnet"
         actions={
           <ArrowLink href={contact.instagramUrl} variant="outline">
             Follow on Instagram
@@ -51,7 +51,7 @@ export default function GalleryPage() {
 
       <CtaSection
         id="follow-cta"
-        tone="red"
+        tone="garnet"
         label="Instagram"
         heading="Connect with CCR."
         body="Find Carolina Collegiate Racing on Instagram."
@@ -62,8 +62,8 @@ export default function GalleryPage() {
         >
           Follow on Instagram
         </ArrowLink>
-        <ArrowLink href="/contact" variant="outline">
-          Contact CCR
+        <ArrowLink href={mailto(contact.generalSubject)} variant="outline">
+          Email CCR
         </ArrowLink>
       </CtaSection>
     </main>

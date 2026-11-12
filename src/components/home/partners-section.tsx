@@ -1,4 +1,5 @@
 import { ArrowLink } from "@/components/ui/arrow-link";
+import { GradientHeadingText } from "@/components/ui/gradient-heading-text";
 import { SectionLabel } from "@/components/ui/section-label";
 import { partnersContent } from "@/content/home";
 import { contact, mailto, sponsorship } from "@/content/site";
@@ -26,7 +27,9 @@ export function PartnersSection() {
               className="heading-section mt-5 text-[clamp(2.4rem,6vw,5rem)]"
             >
               {partnersContent.heading[0]}{" "}
-              <span className="text-red">{partnersContent.heading[1]}</span>
+              <GradientHeadingText className="text-red">
+                {partnersContent.heading[1]}
+              </GradientHeadingText>
             </h2>
 
             <p className="mt-6 max-w-xl text-[16px]/[1.7] text-black/70">
@@ -58,11 +61,6 @@ export function PartnersSection() {
 
           <div className="lg:col-span-5">
             <div className="relative flex h-full flex-col justify-between rounded-[var(--radius-lg)] bg-ink p-6 text-white shadow-[0_12px_30px_rgba(0,0,0,0.2)] sm:p-8">
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-1 bg-red"
-              />
-
               <div>
                 <p className="pt-2 text-[11px] font-medium uppercase tracking-[0.17em] text-white/70">
                   {partnersContent.panelLabel}
@@ -79,16 +77,16 @@ export function PartnersSection() {
                 <div className="flex flex-col gap-3">
                   <ArrowLink
                     href={sponsorship.packetPath}
-                    variant="inverse"
+                    variant="solid"
                     download
                   >
                     {partnersContent.downloadLabel}
                   </ArrowLink>
                   <ArrowLink
-                    href={mailto(contact.sponsorshipSubject)}
+                    href="/partners#tiers"
                     variant="outline"
                   >
-                    {partnersContent.emailCtaLabel}
+                    Sponsorship tiers
                   </ArrowLink>
                 </div>
                 <p className="mt-4 text-[12px]/[1.6] text-white/65">

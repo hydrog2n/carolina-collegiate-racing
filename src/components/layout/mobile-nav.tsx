@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CcrLogo } from "@/components/brand/ccr-logo";
-import { UscMark } from "@/components/brand/usc-mark";
+import { UscMark, UscMarkDark } from "@/components/brand/usc-mark";
 import { contact, mailto, mobileNav, site } from "@/content/site";
 
 export function MobileNav() {
@@ -88,7 +88,7 @@ export function MobileNav() {
         aria-controls={open ? "mobile-navigation" : undefined}
         aria-haspopup="dialog"
         onClick={() => setOpen(true)}
-        className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-sm)] border-2 border-white/30 px-3 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4 sm:text-[12px]"
+        className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-sm)] border-2 border-white/30 px-3 py-2.5 text-[13px] font-semibold uppercase tracking-[0.10em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4"
       >
         Menu
         <span aria-hidden="true" className="flex flex-col gap-1">
@@ -116,7 +116,7 @@ export function MobileNav() {
                 className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 <CcrLogo
-                  variant="mark"
+                  variant="extended"
                   sizes="190px"
                   className="h-8 w-auto sm:h-9"
                 />
@@ -125,7 +125,7 @@ export function MobileNav() {
                 ref={closeRef}
                 type="button"
                 onClick={() => closeMenu()}
-                className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-sm)] border-2 border-white/30 px-3 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4 sm:text-[12px]"
+                className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-sm)] border-2 border-white/30 px-3 py-2.5 text-[13px] font-semibold uppercase tracking-[0.10em] text-white transition-colors hover:border-white hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:gap-3 sm:px-4"
               >
                 Close
                 <span aria-hidden="true" className="text-lg leading-none">
@@ -193,7 +193,7 @@ export function MobileNav() {
                 </div>
 
                 <div className="flex items-center gap-4 border-t border-white/10 pt-6">
-                  <UscMark className="h-10 w-9 shrink-0" />
+                  <UscMarkDark className="h-10 w-9 shrink-0" />
                   <div className="text-[11px] font-medium uppercase leading-relaxed tracking-[0.13em] text-white/65">
                     <p>{site.affiliation}</p>
                     <p>{site.university}</p>

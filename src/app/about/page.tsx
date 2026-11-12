@@ -7,33 +7,35 @@ import { PageSection } from "@/components/layout/page-section";
 import { SectionScrollspy } from "@/components/layout/section-scrollspy";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
-import { storyContent } from "@/content/home";
-import { storyPage } from "@/content/pages";
-import { site, storySectionLinks } from "@/content/site";
+import { aboutContent } from "@/content/home";
+import { aboutPage } from "@/content/pages";
+import { site, aboutSectionLinks } from "@/content/site";
+import { GradientHeadingText } from "@/components/ui/gradient-heading-text";
 
 export const metadata: Metadata = {
-  title: "Our Story",
+  title: "About Us",
   description:
     "How Carolina Collegiate Racing is building a student-run, Miata-based racing program at the University of South Carolina.",
 };
 
-export default function StoryPage() {
+export default function AboutPage() {
   return (
     <main id="main-content">
-      <SectionScrollspy items={storySectionLinks} />
+      <SectionScrollspy items={aboutSectionLinks} />
       <PageIntro
-        index={storyPage.index}
-        label={storyPage.label}
-        title={storyPage.title}
-        intro={storyPage.intro}
-        meta={storyPage.meta}
+        index={aboutPage.index}
+        label={aboutPage.label}
+        title={aboutPage.title}
+        intro={aboutPage.intro}
+        meta={aboutPage.meta}
+        tone = "garnet"
         actions={
           <>
-            <ArrowLink href={storyPage.primaryCta.href}>
-              {storyPage.primaryCta.label}
+            <ArrowLink href={aboutPage.primaryCta.href} variant="inverse">
+              {aboutPage.primaryCta.label}
             </ArrowLink>
-            <ArrowLink href={storyPage.secondaryCta.href} variant="outline">
-              {storyPage.secondaryCta.label}
+            <ArrowLink href={aboutPage.secondaryCta.href} variant="outline">
+              {aboutPage.secondaryCta.label}
             </ArrowLink>
           </>
         }
@@ -42,8 +44,8 @@ export default function StoryPage() {
       <PageSection
         id="who-we-are"
         tone="smoke"
-        label={storyPage.whoLabel}
-        title={storyPage.whoHeading}
+        label={aboutPage.whoLabel}
+        title={aboutPage.whoHeading}
       >
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
@@ -78,7 +80,7 @@ export default function StoryPage() {
 
           <div className="lg:col-span-8">
             <div className="max-w-2xl">
-              {storyPage.whoBody.map((paragraph) => (
+              {aboutPage.whoBody.map((paragraph) => (
                 <p
                   key={paragraph}
                   className="mt-4 text-[16px]/[1.75] text-black/75 first:mt-0"
@@ -107,9 +109,9 @@ export default function StoryPage() {
       <PageSection
         id="program-direction"
         tone="black"
-        label={storyPage.nowLabel}
-        title={storyPage.nowHeading}
-        intro={storyPage.nowBody}
+        label={aboutPage.nowLabel}
+        title={aboutPage.nowHeading}
+        intro={aboutPage.nowBody}
       >
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
@@ -137,7 +139,7 @@ export default function StoryPage() {
             </dl>
 
             <p className="mt-6 border-t border-white/15 pt-5 text-[13px]/[1.65] text-white/65">
-              {storyPage.nowNote}
+              {aboutPage.nowNote}
             </p>
           </div>
 
@@ -157,7 +159,7 @@ export default function StoryPage() {
         title="Four mission areas."
       >
         <ol className="grid gap-x-12 gap-y-8 sm:grid-cols-2">
-          {storyContent.mission.map((item, index) => (
+          {aboutContent.mission.map((item, index) => (
             <li
               key={item.title}
               className="grid grid-cols-[auto_1fr] gap-4 border-t border-black/15 pt-5 sm:gap-5"
@@ -184,9 +186,9 @@ export default function StoryPage() {
       <PageSection
         id="engineering"
         tone="black"
-        label={storyPage.engineeringLabel}
-        title={storyPage.engineeringHeading}
-        intro={storyPage.engineeringBody}
+        label={aboutPage.engineeringLabel}
+        title={aboutPage.engineeringHeading}
+        intro={aboutPage.engineeringBody}
       >
         <div className="grid gap-6 border-t border-white/15 pt-6 sm:grid-cols-3">
           {[
@@ -206,20 +208,20 @@ export default function StoryPage() {
 
       <CtaSection
         id="join-cta"
-        tone="garnet"
+        tone="smoke"
         label="Build with us"
         heading={
           <>
             Learn by doing.{" "}
-            <span className="text-white/60">Join the team.</span>
+            <GradientHeadingText className="text-red">Join the team.</GradientHeadingText>
           </>
         }
         body="Membership is open to University of South Carolina students and faculty."
       >
-        <ArrowLink href="/join" variant="inverse">
+        <ArrowLink href="/join" variant="solid">
           Join CCR
         </ArrowLink>
-        <ArrowLink href="/team" variant="outline">
+        <ArrowLink href="/team" variant="light">
           Inside the team
         </ArrowLink>
       </CtaSection>

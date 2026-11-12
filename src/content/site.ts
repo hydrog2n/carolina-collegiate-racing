@@ -9,85 +9,78 @@ export const site = {
 
 export const primaryNav = [
   { label: "Home", href: "/" },
-  { label: "Our story", href: "/story" },
-  { label: "The team", href: "/team" },
+  { label: "Team", href: "/team" },
   { label: "Events", href: "/events" },
   { label: "Partners", href: "/partners" },
   { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/about" },
 ] as const;
 
 export const mobileNav = [
   { label: "Home", href: "/" },
-  { label: "Our story", href: "/story" },
-  { label: "The team", href: "/team" },
+  { label: "Team", href: "/team" },
   { label: "Events", href: "/events" },
   { label: "Partners", href: "/partners" },
-  { label: "Join CCR", href: "/join" },
-  { label: "Contact", href: "/contact" },
   { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/about" },
+  { label: "Join CCR", href: "/join" },
 ] as const;
 
 export const footerNav = mobileNav;
 
 export const homeSectionLinks = [
   { id: "top", label: "Home" },
-  { id: "story", label: "Story" },
+  { id: "about", label: "About us" },
   { id: "program", label: "Program" },
   { id: "team", label: "Team" },
-  { id: "partners", label: "Partners" },
-  { id: "join", label: "Join" },
-  { id: "contact", label: "Contact" },
+  { id: "partners", label: "Sponsor Us" },
 ] as const;
 
-export const storySectionLinks = [
-  { id: "top", label: "Story" },
+export const aboutSectionLinks = [
+  { id: "top", label: "About us" },
   { id: "who-we-are", label: "Who we are" },
   { id: "program-direction", label: "The program" },
   { id: "mission", label: "Mission" },
   { id: "engineering", label: "Engineering" },
-  { id: "join-cta", label: "Join" },
 ] as const;
 
 export const teamSectionLinks = [
-  { id: "top", label: "The team" },
-  { id: "work-areas", label: "Ways to contribute" },
-  { id: "member-profiles", label: "Member profiles" },
-  { id: "join-cta", label: "Join" },
+  { id: "member-profiles", label: "Our Roster" },
+  { id: "exec", label: "Executive Board" },
+  { id: "business", label: "Business" },
+  { id: "marketing", label: "Marketing" },
+  { id: "technical", label: "Technical" },
+  { id: "trackside-operations", label: "Trackside operations" },
+  { id: "race-engineers", label: "Race Engineers/Strategists" },
+  { id: "sim-team", label: "Sim Team" },
+  { id: "safety", label: "Safety" },
+  { id: "driver-controls", label: "Driver Controls/Drivers" },
 ] as const;
 
 export const eventsSectionLinks = [
   { id: "top", label: "Events" },
   { id: "upcoming", label: "Upcoming" },
   { id: "directions", label: "Racing directions" },
-  { id: "updates-cta", label: "Follow CCR" },
 ] as const;
 
 export const partnersSectionLinks = [
   { id: "top", label: "Partners" },
-  { id: "support", label: "Support" },
-  { id: "tiers", label: "Sponsorship tiers" },
   { id: "steps", label: "How to sponsor" },
-  { id: "contact-cta", label: "Contact" },
+  { id: "tiers", label: "Sponsorship tiers" },
+  { id: "support", label: "Support" },
+  { id: "contact-cta", label: "Sponsorship" },
 ] as const;
 
 export const joinSectionLinks = [
   { id: "top", label: "Join CCR" },
   { id: "opportunities", label: "Ways to contribute" },
   { id: "how-to-join", label: "Getting involved" },
-  { id: "join-cta", label: "Contact" },
-] as const;
-
-export const contactSectionLinks = [
-  { id: "top", label: "Contact" },
-  { id: "email", label: "Email the team" },
-  { id: "instagram", label: "Instagram" },
-  { id: "contact-cta", label: "Contact options" },
+  { id: "join-cta", label: "Email CCR" },
 ] as const;
 
 export const gallerySectionLinks = [
   { id: "top", label: "Gallery" },
   { id: "gallery", label: "Photo & video" },
-  { id: "follow-cta", label: "Follow CCR" },
 ] as const;
 
 export const contact = {

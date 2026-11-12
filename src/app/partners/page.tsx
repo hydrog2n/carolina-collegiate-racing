@@ -50,47 +50,6 @@ export default function PartnersPage() {
           </>
         }
       />
-
-      <PageSection
-        id="support"
-        tone="smoke"
-        label={partnersPage.supportLabel}
-        title={partnersPage.supportHeading}
-        intro={partnersPage.supportBody}
-      >
-        <div className="grid gap-x-12 gap-y-8 sm:grid-cols-2">
-          {supportAreas.map((area, index) => (
-            <article
-              key={area.title}
-              className="border-t border-black/15 pt-5"
-            >
-              <span
-                aria-hidden="true"
-                className="font-display text-[2.2rem] leading-none text-red"
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 max-w-md text-[16px] font-bold leading-snug">
-                {area.title}
-              </h3>
-              <p className="mt-2 max-w-md text-[14px]/[1.7] text-black/65">
-                {area.detail}
-              </p>
-            </article>
-          ))}
-        </div>
-      </PageSection>
-
-      <PageSection
-        id="tiers"
-        tone="black"
-        label={partnersPage.tiersLabel}
-        title={partnersPage.tiersHeading}
-        intro={partnersPage.tiersBody}
-      >
-        <SponsorshipTiers />
-      </PageSection>
-
       <PageSection
         id="steps"
         tone="smoke"
@@ -134,6 +93,45 @@ export default function PartnersPage() {
         </div>
       </PageSection>
 
+      <PageSection
+        id="tiers"
+        tone="black"
+        label={partnersPage.tiersLabel}
+        title={partnersPage.tiersHeading}
+        intro={partnersPage.tiersBody}
+      >
+        <SponsorshipTiers />
+      </PageSection>
+
+      <PageSection
+        id="support"
+        tone="smoke"
+        label={partnersPage.supportLabel}
+        title={partnersPage.supportHeading}
+        intro={partnersPage.supportBody}
+      >
+        <div className="grid gap-x-12 gap-y-8 sm:grid-cols-2">
+          {supportAreas.map((area, index) => (
+            <article
+              key={area.title}
+              className="border-t border-black/15 pt-5"
+            >
+              <span
+                aria-hidden="true"
+                className="font-display text-[2.2rem] leading-none text-red"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 max-w-md text-[16px] font-bold leading-snug">
+                {area.title}
+              </h3>
+              <p className="mt-2 max-w-md text-[14px]/[1.7] text-black/65">
+                {area.detail}
+              </p>
+            </article>
+          ))}
+        </div>
+      </PageSection>
       <CtaSection
         id="contact-cta"
         tone="red"
@@ -146,9 +144,6 @@ export default function PartnersPage() {
           variant="inverse"
         >
           Email CCR
-        </ArrowLink>
-        <ArrowLink href="/contact" variant="outline">
-          Contact CCR
         </ArrowLink>
       </CtaSection>
     </main>

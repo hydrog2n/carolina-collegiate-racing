@@ -11,7 +11,7 @@ type SectionScrollspyProps = {
   items: readonly ScrollspyItem[];
 };
 
-const ACTIVATION_OFFSET = 100;
+const ACTIVATION_OFFSET = 132;
 
 export function SectionScrollspy({ items }: SectionScrollspyProps) {
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
@@ -99,17 +99,17 @@ export function SectionScrollspy({ items }: SectionScrollspyProps) {
   return (
     <nav
       aria-label="On this page"
-      className="section-scrollspy fixed right-5 top-1/2 z-40 max-h-[calc(100dvh-3rem)] -translate-y-1/2 overflow-y-auto"
+      className="section-scrollspy fixed left-3 top-1/2 z-40 max-h-[calc(100dvh-3rem)] -translate-y-1/2 overflow-y-auto"
     >
-      <div className="relative bg-black/80 px-3 py-4 ring-1 ring-white/10 backdrop-blur-sm">
+      <div className="relative rounded-lg backdrop-blur-sm px-4 py-1.5 bg-black/85">
         <span
           aria-hidden="true"
-          className="absolute bottom-9 left-[0.9375rem] top-9 w-px bg-white/20"
+          className="absolute bottom-[1.875rem] left-[1.15rem] top-[1.875rem] w-0.5 bg-white/40"
         />
         <span
           aria-hidden="true"
-          className="absolute left-[0.9375rem] top-9 w-px bg-red transition-[height] duration-300 ease-out"
-          style={{ height: `calc((100% - 4.5rem) * ${progress / 100})` }}
+          className="absolute left-[1.15rem] top-[1.875rem] w-0.5 bg-[#CC2E40] transition-[height] duration-300 ease-out"
+          style={{ height: `calc((100% - 3.75rem) * ${progress / 100})` }}
         />
 
         <ol>
@@ -125,17 +125,17 @@ export function SectionScrollspy({ items }: SectionScrollspyProps) {
                 >
                   <span
                     aria-hidden="true"
-                    className={`relative z-10 h-1.5 w-1.5 shrink-0 rounded-full border transition-all duration-200 group-hover:scale-125 ${
+                    className={`relative z-10 h-2.5 w-1.5 shrink-0 rounded-full border-2 transition-all duration-200 group-hover:scale-125 ${
                       active
-                        ? "scale-125 border-red bg-red"
-                        : "border-white/45 bg-black"
+                        ? "scale-125 border-[#CC2E40] h-4  bg-[#CC2E40]"
+                        : "border-[#828282] bg-[#828282] group-hover:border-2 group-hover:bg-white group-hover:border-white"
                     }`}
                   />
                   <span
-                    className={`whitespace-nowrap text-[10px] uppercase tracking-[0.16em] transition-colors ${
+                    className={`whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.16em] transition-[color,text-shadow] ${
                       active
-                        ? "font-medium text-white"
-                        : "text-white/70 group-hover:text-white"
+                        ? "font-bold  text-[#CC2E40] [text-shadow:0_0_12px_#CC2E40]"
+                        : "text-white/40 group-hover:text-white group-hover:[text-shadow:0_0_12px_white]"
                     }`}
                   >
                     {item.label}

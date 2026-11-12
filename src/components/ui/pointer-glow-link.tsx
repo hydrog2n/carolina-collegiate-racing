@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { PointerEvent, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type PointerGlowLinkProps = {
   href: string;
@@ -10,7 +10,6 @@ type PointerGlowLinkProps = {
   nativeAnchor?: boolean;
   external?: boolean;
   download?: boolean | string;
-  glow?: boolean;
 };
 
 export function PointerGlowLink({
@@ -20,22 +19,7 @@ export function PointerGlowLink({
   nativeAnchor = false,
   external = false,
   download,
-  glow = false,
 }: PointerGlowLinkProps) {
-  const handlePointerMove = (event: PointerEvent<HTMLAnchorElement>) => {
-    if (!glow || event.pointerType === "touch") return;
-
-    const bounds = event.currentTarget.getBoundingClientRect();
-    event.currentTarget.style.setProperty(
-      "--pointer-x",
-      `${event.clientX - bounds.left}px`,
-    );
-    event.currentTarget.style.setProperty(
-      "--pointer-y",
-      `${event.clientY - bounds.top}px`,
-    );
-  };
-
   const content = (
     <span className="relative z-10 inline-flex items-center whitespace-nowrap">
       {children}
@@ -50,7 +34,6 @@ export function PointerGlowLink({
         target={external ? "_blank" : undefined}
         rel={external ? "noreferrer" : undefined}
         download={download === true ? "" : download}
-        onPointerMove={glow ? handlePointerMove : undefined}
       >
         {content}
       </a>
@@ -61,7 +44,6 @@ export function PointerGlowLink({
     <Link
       href={href}
       className={className}
-      onPointerMove={glow ? handlePointerMove : undefined}
     >
       {content}
     </Link>
