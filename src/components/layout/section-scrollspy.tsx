@@ -99,20 +99,25 @@ export function SectionScrollspy({ items }: SectionScrollspyProps) {
   return (
     <nav
       aria-label="On this page"
-      className="section-scrollspy fixed left-3 top-1/2 z-40 max-h-[calc(100dvh-3rem)] -translate-y-1/2 overflow-y-auto"
+      className="section-scrollspy scale-96 hover:scale-100 fixed left-4 hover:left-5.5 top-1/2 z-40 max-h-[calc(100dvh-3rem)] transition-all -translate-y-1/2 overflow-y-auto duration-300 ease-in-out"
     >
-      <div className="relative rounded-lg backdrop-blur-sm px-4 py-1.5 bg-black/85">
+      <div className="group/scrollspy relative w-10 hover:w-max focus-within:w-max [interpolate-size:allow-keywords] overflow-hidden rounded-lg bg-black/85 py-1.5 pr-4 backdrop-blur-sm transition-[width] duration-300 ease-in-out">
+        {/* Background progress line */}
         <span
           aria-hidden="true"
           className="absolute bottom-[1.875rem] left-[1.15rem] top-[1.875rem] w-0.5 bg-white/40"
         />
+
+        {/* Active progress line */}
         <span
           aria-hidden="true"
           className="absolute left-[1.15rem] top-[1.875rem] w-0.5 bg-[#CC2E40] transition-[height] duration-300 ease-out"
-          style={{ height: `calc((100% - 3.75rem) * ${progress / 100})` }}
+          style={{
+            height: `calc((100% - 3.75rem) * ${progress / 100})`,
+          }}
         />
 
-        <ol>
+        <ol className="w-max">
           {items.map((item) => {
             const active = item.id === activeId;
 
@@ -121,20 +126,24 @@ export function SectionScrollspy({ items }: SectionScrollspyProps) {
                 <a
                   href={`#${item.id}`}
                   aria-current={active ? "location" : undefined}
-                  className="group flex min-h-10 items-center gap-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  aria-label={item.label}
+                  className="group flex min-h-10 items-center gap-3 px-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
+                  {/* Marker */}
                   <span
                     aria-hidden="true"
                     className={`relative z-10 h-2.5 w-1.5 shrink-0 rounded-full border-2 transition-all duration-200 group-hover:scale-125 ${
                       active
-                        ? "scale-125 border-[#CC2E40] h-4  bg-[#CC2E40]"
-                        : "border-[#828282] bg-[#828282] group-hover:border-2 group-hover:bg-white group-hover:border-white"
+                        ? "scale-x-125 scale-y-180 border-[#CC2E40] bg-[#CC2E40]"
+                        : "border-[#828282] bg-[#828282] group-hover:border-white group-hover:bg-white"
                     }`}
                   />
+
+                  {/* Label: stationary, revealed by clipping */}
                   <span
-                    className={`whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.16em] transition-[color,text-shadow] ${
+                    className={`shrink-0 whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.16em] opacity-0 transition-[opacity,color,text-shadow] duration-300 ease-out group-hover/scrollspy:opacity-100 group-focus-within/scrollspy:opacity-100 ${
                       active
-                        ? "font-bold  text-[#CC2E40] [text-shadow:0_0_12px_#CC2E40]"
+                        ? "text-[#CC2E40] [text-shadow:0_0_10px_#CC2E40]"
                         : "text-white/40 group-hover:text-white group-hover:[text-shadow:0_0_12px_white]"
                     }`}
                   >
@@ -146,6 +155,7 @@ export function SectionScrollspy({ items }: SectionScrollspyProps) {
           })}
         </ol>
       </div>
+
     </nav>
   );
 }

@@ -81,9 +81,9 @@ export default function TeamPage() {
                           preserveAspectRatio="xMidYMax slice"
                           className="absolute inset-0 h-full w-full"
                         >
-                          <circle cx="90" cy="94" r="36" fill="#343438" />
+                          <circle cx="90" cy="150" r="36" fill="#343438" />
                           <path
-                            d="M22 300v-34c0-57 30-97 68-97s68 40 68 97v34H22Z"
+                            d="M22 330v-34c0-57 25-97 68-97s68 40 68 97v34H22Z"
                             fill="#343438"
                           />
                         </svg>
