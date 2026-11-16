@@ -12,6 +12,7 @@ type PageSectionProps = {
   intro?: string;
   children?: ReactNode;
   className?: string;
+  compact?: boolean;
 };
 
 const toneStyles: Record<
@@ -52,6 +53,7 @@ export function PageSection({
   intro,
   children,
   className = "",
+  compact = false,
 }: PageSectionProps) {
   const styles = toneStyles[tone];
   const hasHeader = Boolean(label || title);
@@ -61,7 +63,11 @@ export function PageSection({
       id={id}
       className={`relative scroll-mt-24 overflow-hidden ${styles.background} ${className}`}
     >
-      <div className="shell py-16 sm:py-20 lg:py-12">
+      <div
+        className={`shell ${
+          compact ? "py-10 sm:py-14 lg:py-10" : "py-16 sm:py-20 lg:py-12"
+        }`}
+      >
         {hasHeader ? (
           <div className="grid gap-6 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
@@ -91,7 +97,17 @@ export function PageSection({
           </div>
         ) : null}
 
-        <div className={hasHeader ? "mt-10 lg:mt-12" : ""}>{children}</div>
+        <div
+          className={
+            hasHeader
+              ? compact
+                ? "mt-7 lg:mt-8"
+                : "mt-10 lg:mt-12"
+              : ""
+          }
+        >
+          {children}
+        </div>
       </div>
     </section>
   );

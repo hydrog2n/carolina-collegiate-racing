@@ -10,6 +10,7 @@ type ArrowLinkProps = {
   variant?: ArrowLinkVariant;
   className?: string;
   download?: boolean | string;
+  wrap?: boolean;
 };
 
 const variants: Record<ArrowLinkVariant, string> = {
@@ -33,13 +34,14 @@ export function ArrowLink({
   variant = "solid",
   className = "",
   download,
+  wrap = false,
 }: ArrowLinkProps) {
-  const classes = `group inline-flex min-h-12 items-center justify-center gap-4 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.10em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 ${variants[variant]} ${className}`;
+  const classes = `group/arrow-link inline-flex min-h-12 items-center justify-center gap-4 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[0.10em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 ${wrap ? "min-w-0 max-w-full" : ""} ${variants[variant]} ${className}`;
 
   const content = (
     <span className="inline-flex items-center gap-4">
-      {children}
-      <ArrowIcon className="transition-transform duration-200 group-hover:translate-x-1" />
+      <span className={wrap ? "min-w-0 whitespace-normal" : ""}>{children}</span>
+      <ArrowIcon className="transition-transform duration-200 group-hover/arrow-link:translate-x-1" />
     </span>
   );
 
@@ -50,6 +52,7 @@ export function ArrowLink({
       nativeAnchor={externalPattern.test(href)}
       external={href.startsWith("http")}
       download={download}
+      wrap={wrap}
     >
       {content}
     </PointerGlowLink>

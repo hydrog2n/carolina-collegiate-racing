@@ -87,20 +87,20 @@ export const teamPage = {
   secondaryCta: { label: "Back to the program", href: "/#program" },
 } as const;
 
-export const eventsPage = {
+export const schedulePage = {
   index: "03",
-  label: "Events",
-  title: "Events & schedule.",
+  label: "Schedule",
+  title: "The schedule.",
   intro:
-    "Competition entries, team events, and sim racing activities will be listed here as they are scheduled.",
+    "Verified team activities, meetings, and competition information.",
   meta: [
     { label: "Circuit racing", value: "MX-5 Cup procurement" },
     { label: "Sim racing", value: "CRS iRacing" },
   ],
   emptyLabel: "Upcoming",
-  emptyHeading: "No events on the calendar yet.",
+  emptyHeading: "No activities on the calendar yet.",
   emptyBody:
-    "Confirmed entries and team activities will appear here.",
+    "Verified activities will appear here when they are scheduled.",
   directionsLabel: "What we're pursuing",
   directionsHeading: "Two ways to develop racecraft.",
   directions: [

@@ -10,7 +10,7 @@ export const site = {
 export const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Team", href: "/team" },
-  { label: "Events", href: "/events" },
+  { label: "Schedule", href: "/schedule" },
   { label: "Partners", href: "/partners" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
@@ -19,7 +19,7 @@ export const primaryNav = [
 export const mobileNav = [
   { label: "Home", href: "/" },
   { label: "Team", href: "/team" },
-  { label: "Events", href: "/events" },
+  { label: "Schedule", href: "/schedule" },
   { label: "Partners", href: "/partners" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
@@ -57,9 +57,9 @@ export const teamSectionLinks = [
   { id: "driver-controls", label: "Driver Controls/Drivers" },
 ] as const;
 
-export const eventsSectionLinks = [
-  { id: "top", label: "Events" },
-  { id: "upcoming", label: "Upcoming" },
+export const scheduleSectionLinks = [
+  { id: "top", label: "Schedule" },
+  { id: "calendar", label: "Calendar" },
   { id: "directions", label: "Racing directions" },
 ] as const;
 

@@ -10,6 +10,7 @@ type PointerGlowLinkProps = {
   nativeAnchor?: boolean;
   external?: boolean;
   download?: boolean | string;
+  wrap?: boolean;
 };
 
 export function PointerGlowLink({
@@ -19,9 +20,14 @@ export function PointerGlowLink({
   nativeAnchor = false,
   external = false,
   download,
+  wrap = false,
 }: PointerGlowLinkProps) {
   const content = (
-    <span className="relative z-10 inline-flex items-center whitespace-nowrap">
+    <span
+      className={`relative z-10 inline-flex items-center ${
+        wrap ? "min-w-0 max-w-full whitespace-normal" : "whitespace-nowrap"
+      }`}
+    >
       {children}
     </span>
   );
