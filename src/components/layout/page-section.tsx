@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { SectionLabel } from "@/components/ui/section-label";
 
-type PageSectionTone = "black" | "smoke" | "garnet";
+type PageSectionTone = "black" | "smoke" | "garnet" | "red";
 
 type PageSectionProps = {
   id?: string;
@@ -38,6 +38,12 @@ const toneStyles: Record<
   },
   garnet: {
     background: "bg-garnet text-white ambient-red-highlight",
+    labelTone: "red",
+    muted: "text-white/75",
+    border: "border-white/20",
+  },
+  red: {
+    background: "bg-black text-white ambient-red-light",
     labelTone: "red",
     muted: "text-white/75",
     border: "border-white/20",

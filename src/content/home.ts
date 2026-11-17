@@ -4,11 +4,12 @@ export const heroContent = {
   heading: ["Eyes on", "the grid."],
   description:
     "A student-run motorsports organization at the University of South Carolina, bringing students together around racing and hands-on experience.",
-  primaryCta: { label: "Join CCR", href: "/join" },
-  secondaryCta: { label: "Partner with CCR", href: "/partners" },
+  primaryCta: { label: "Partner with us", href: "/partners" },
+  secondaryCta: { label: "Support CCR", href: "https://connect.sc.edu/AG/sfp/cec/the-carolina-collegiate-racing-fund" },
   tertiaryCta: { label: "Explore the program", href: "#program" },
   facts: [
-    { label: "Team", value: "Student-run" },
+    { label: "Current participating in",
+      value: "Student-run" },
     { label: "Focus", value: "Miata-based" },
     { label: "Membership", value: "USC students & faculty" },
   ],
@@ -44,7 +45,7 @@ export const aboutContent = {
         "Work toward organizing racing events and collegiate competitions.",
     },
   ],
-  cta: { label: "About us", href: "/about" },
+  cta: { label: "Our story", href: "/about" },
   sponsorCta: { label: "Sponsor the program", href: "/partners" },
 } as const;
 
@@ -90,8 +91,8 @@ export const programContent = {
   ],
   roadAheadNote:
     "Competition dates and entries will be published when confirmed.",
-  instagramCta: "Follow the build on Instagram",
-  joinCta: { label: "Join the build", href: "/join" },
+  instagramCta: "Support our journey",
+  joinCta: { label: "Follow the build", href: "/join" },
 } as const;
 
 export const teamContent = {

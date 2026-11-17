@@ -226,11 +226,11 @@ function GridEventDate({ event }: { event: ScheduleEvent }) {
 
   return (
     <div className="flex min-w-0 flex-col border-l-[3px] border-red pl-3">
-      <p className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.16em] text-white/55">
+      <p className="whitespace-nowrap text-[14px] font-medium uppercase tracking-[0.16em] text-white/55">
         {monthLabel}
       </p>
       <p
-        className={`mt-2 whitespace-nowrap font-display leading-none tracking-[0.005em] text-white ${
+        className={`mt-0.5 whitespace-nowrap font-display leading-none tracking-[0.005em] text-white ${
           isRange
             ? "text-[clamp(2rem,4vw,2.6rem)]"
             : "text-[clamp(2.4rem,5vw,4rem)]"
@@ -239,7 +239,7 @@ function GridEventDate({ event }: { event: ScheduleEvent }) {
         {dayLabel}
       </p>
       {startYear !== endYear ? (
-        <p className="mt-1 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.16em] text-white/55">
+        <p className="mt-0.5 whitespace-nowrap text-[14px] font-medium uppercase tracking-[0.16em] text-white/55">
           {startYear}–{endYear}
         </p>
       ) : null}
@@ -272,11 +272,13 @@ function EventCard({
   event,
   now,
   view,
+  isPast,
   onOpen,
 }: {
   event: ScheduleEvent;
   now: Date;
   view: EventView;
+  isPast: boolean;
   onOpen: (event: ScheduleEvent) => void;
 }) {
   const isToday = isEventToday(event, now);
@@ -288,8 +290,11 @@ function EventCard({
 
   return (
     <article
-      className={`group duration-300 overflow-hidden rounded-[var(--radius-lg)] border-2 border-white/15 bg-graphite shadow-[0_12px_30px_rgba(0,0,0,0.14)] transition-[border-color, box-shadow] hover:border-white/50 hover:shadow-[0_12px_30px_rgba(0,0,0,0.2)] motion-reduce:transition-none ${
-        view === "list"
+      className={`group duration-300 overflow-hidden rounded-[var(--radius-lg)] border-2 border-graphite bg-graphite shadow-[0_12px_30px_rgba(0,0,0,0.14)] transition-[border-color, box-shadow] hover:border-red hover:shadow-[0_12px_30px_rgba(0,0,0,0.2)] motion-reduce:transition-none ${
+        isPast
+          ? "grayscale brightness-75 hover:grayscale-0 hover:brightness-100 hover:border-red"
+          : "hover:border-red hover:shadow-[0_12px_30px_rgba(0,0,0,0.2)]"
+      } ${view === "list"
           ? listColumns
           : "flex flex-col p-5 sm:p-6"
       }`}
@@ -603,7 +608,7 @@ function EventDialog({
         aria-modal="true"
         aria-labelledby="event-dialog-title"
         tabIndex={-1}
-        className="max-h-[92dvh] w-full max-w-2xl overscroll-contain overflow-y-auto rounded-t-[var(--radius-lg)] border border-white/20 bg-charcoal text-white shadow-[0_12px_30px_rgba(0,0,0,0.3)] sm:rounded-[var(--radius-lg)]"
+        className="max-h-[92dvh] w-full max-w-2xl overscroll-contain overflow-y-auto rounded-t-[var(--radius-lg)] border- border-white/20 bg-charcoal text-white shadow-[0_12px_30px_rgba(0,0,0,0.3)] sm:rounded-[var(--radius-lg)]"
       >
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/15 bg-charcoal/95 px-5 py-3 backdrop-blur sm:px-7">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-red">
@@ -613,7 +618,7 @@ function EventDialog({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[var(--radius-sm)] border border-white/25 text-2xl leading-none text-white hover:bg-white hover:text-black focus-visible:outline-white"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-[var(--radius-sm)] border-2 border-white/25 text-2xl leading-none text-white hover:bg-white hover:text-black focus-visible:outline-white"
             aria-label="Close event details"
           >
             ×
@@ -660,7 +665,7 @@ function EventDialog({
               <dd className="mt-1 text-[13px]/[1.6]">
                 {dateTimeLabel}
                 <br />
-                <span className="text-white/60">
+                <span className="text-white/50">
                   Event local time · {event.timeZone ?? "America/New_York"}
                 </span>
               </dd>
@@ -879,7 +884,7 @@ export function ScheduleBrowser({
       {isDevelopmentFixture ? (
         <aside
           role="note"
-          className="mb-6  border-l-4 border-red bg-red/10 px-4 py-4 text-black sm:px-5"
+          className="mb-6  border-l-4 border-red bg-red/10 px-4 py-4 text-white sm:px-5"
         >
           <p className="text-[11px] font-black uppercase tracking-[0.15em] text-white">
             Local development fixture · {events.length} fictional examples
@@ -891,20 +896,20 @@ export function ScheduleBrowser({
       ) : null}
 
       {events.length === 0 ? (
-        <div className="rounded-[var(--radius-lg)] border border-black/15 bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:p-7">
-          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-black/50">
+        <div className="rounded-[var(--radius-lg)] border border-white/15 bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:p-7">
+          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/50">
             {emptyLabel}
           </p>
-          <h3 className="mt-2 font-display text-3xl uppercase text-black">
+          <h3 className="mt-2 font-display text-3xl uppercase text-white">
             {emptyHeading}
           </h3>
-          <p className="mt-2 max-w-xl text-[14px]/[1.65] text-black/65">
+          <p className="mt-2 max-w-xl text-[14px]/[1.65] text-white/65">
             {emptyBody}
           </p>
         </div>
       ) : (
         <>
-          <div className="flex flex-wrap items-center justify-between gap-3 border-y border-black/15 py-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 py-3">
             <div className="flex flex-wrap gap-2" role="tablist" aria-label="Schedule period">
               {(["upcoming", "past"] as const).map((currentTab) => {
                 const count =
@@ -947,16 +952,6 @@ export function ScheduleBrowser({
                     placeholder="Title, details, venue, room..."
                     className="min-w-0 flex-1 bg-transparent text-[13px] text-white outline-none placeholder:text-white/45"
                   />
-                  {search ? (
-                    <button
-                      type="button"
-                      onClick={() => setSearch("")}
-                      className="ml-2 inline-flex min-h-8 min-w-8 items-center justify-center rounded-[var(--radius-sm)] text-[18px] text-white/60 hover:bg-white/5 hover:text-white"
-                      aria-label="Clear search"
-                    >
-                      ×
-                    </button>
-                  ) : null}
                 </span>
               </label>
 
@@ -972,7 +967,7 @@ export function ScheduleBrowser({
                   </span>
                   <span aria-hidden="true" className="text-white/60">⌄</span>
                 </summary>
-                <fieldset className="absolute left-0 top-[calc(100%+0.5rem)] z-30 max-h-80 w-72 max-w-[calc(100vw-2.5rem)] overflow-y-auto rounded-[var(--radius-md)] border border-white/15 bg-black p-3 text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)]">
+                <fieldset className="absolute left-0 top-[calc(100%+0.5rem)] z-30 max-h-80 w-72 max-w-[calc(100vw-2.5rem)] overflow-y-auto rounded-[var(--radius-md)] border border-white/15 bg-graphite p-3 text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)]">
                   <legend className="px-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/60">
                     Filter categories
                   </legend>
@@ -1005,14 +1000,14 @@ export function ScheduleBrowser({
                     onChange={(changeEvent) =>
                       setSortOption(changeEvent.target.value as SortOption)
                     }
-                    className="min-h-11 w-full appearance-none rounded-[var(--radius-sm)] border-2 border-white/20 bg-black px-3 pr-10 text-[12px] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="min-h-11 w-full appearance-none rounded-[var(--radius-sm)] border-2 border-white/20 px-3 pr-10 text-[12px] text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                     style={{ colorScheme: "dark" }}
                   >
                     {sortOptions.map((option) => (
                       <option
                         key={option.value}
                         value={option.value}
-                        className="bg-black text-white"
+                        className="bg-graphite text-white"
                       >
                         {option.label}
                       </option>
@@ -1053,7 +1048,7 @@ export function ScheduleBrowser({
                       onClick={() => setView(currentView)}
                       className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-[var(--radius-sm)] border transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black motion-reduce:transition-none ${
                         view === currentView
-                          ? "border-2 border-white bg-white text-black"
+                          ? "border-2 border-white bg-white text-graphite"
                           : "border-2 border-white/20 text-white/65 hover:border-white hover:text-white"
                       }`}
                     >
@@ -1087,12 +1082,12 @@ export function ScheduleBrowser({
           </div>
 
           <div className="mb-3 mt-4 flex items-center justify-between gap-3">
-            <p className="text-[11px] text-black/60" aria-live="polite">
+            <p className="text-[11px] text-white/60" aria-live="polite">
               Showing{" "}
-              <span className="font-bold text-black">{visibleEvents.length}</span>{" "}
+              <span className="font-bold text-white">{visibleEvents.length}</span>{" "}
               {visibleEvents.length === 1 ? "activity" : "activities"}
             </p>
-            <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-black/50">
+            <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-white/50">
               {tab === "upcoming" ? "Upcoming" : "Past"} · {selectedTabEvents.length} total
             </p>
           </div>
@@ -1114,18 +1109,19 @@ export function ScheduleBrowser({
                   event={event}
                   now={now}
                   view={view}
+                  isPast={tab === "past"}
                   onOpen={setSelectedEvent}
                 />
               ))}
             </div>
           ) : (
-            <div className="rounded-[var(--radius-lg)] border border-black/15 bg-white px-5 py-7 text-center shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
-              <p className="font-display text-2xl uppercase text-black">
+            <div className="min-h-[250px] md:min-h-[300px] lg:min-h-[300px] rounded-[var(--radius-lg)] items-center border-2 border-white/15 px-5 py-7 text-center shadow-[0_8px_24px_rgba(0,0,0,0.06)]">
+              <p className="mt-5 font-display text-2xl uppercase text-white">
                 {selectedEventCount
                   ? "No activities match these filters."
                   : `No ${tab} activities.`}
               </p>
-              <p className="mt-2 text-[13px] text-black/60">
+              <p className="mt-2 text-[13px] text-white/60">
                 {selectedEventCount
                   ? "Change your search or selected categories."
                   : "Check back when the schedule is updated."}
@@ -1134,9 +1130,10 @@ export function ScheduleBrowser({
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="mt-4 inline-flex min-h-11 items-center justify-center rounded-[var(--radius-sm)] bg-red px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-white hover:bg-black focus-visible:outline-black"
+                  className="mt-6 group inline-flex min-h-6 items-center justify-center gap-4 rounded-[var(--radius-sm)] bg-white px-4 py-3 text-[13px] font-semibold uppercase tracking-[0.1em] text-black transition-all duration-300 hover:bg-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"
                 >
-                  Clear filters
+                  <span>Clear filters</span>
+                  <ArrowIcon className="transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transition-none" />
                 </button>
               ) : null}
             </div>

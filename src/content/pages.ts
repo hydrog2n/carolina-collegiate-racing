@@ -90,7 +90,7 @@ export const teamPage = {
 export const schedulePage = {
   index: "03",
   label: "Schedule",
-  title: "The schedule.",
+  title: "What's on the grid.",
   intro:
     "Verified team activities, meetings, and competition information.",
   meta: [
@@ -176,8 +176,8 @@ export const joinPage = {
   howBody:
     "Tell the team about your interests and ask about current ways to get involved.",
   note: "Email is the current contact for membership questions.",
-  primaryCta: { label: "Email CCR", href: "" },
-  secondaryCta: { label: "Follow on Instagram", href: "" },
+  primaryCta: { label: "Garnet Gate", href: "" },
+  secondaryCta: { label: "Email us", href: "" },
 } as const;
 
 export const galleryPage = {

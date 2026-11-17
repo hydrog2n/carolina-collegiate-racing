@@ -1,9 +1,9 @@
 export const sponsorshipTiers = [
-  { name: "Cocky", price: "$10,000+" },
-  { name: "Garnet", price: "$5,000+" },
-  { name: "Black", price: "$2,500+" },
-  { name: "White", price: "$1,000+" },
-  { name: "Blue", price: "$250+" },
+  { name: "Cocky", price: "$10,000+", color: "#CC2E40", textColor: "#FFFFFF" },
+  { name: "Garnet", price: "$5,000+", color: "#73000A", textColor: "#FFFFFF" },
+  { name: "Black", price: "$2,500+", color: "#000000", textColor: "#FFFFFF" },
+  { name: "White", price: "$1,000+", color: "#FFFFFF", textColor: "#000000" },
+  { name: "Blue", price: "$250+", color: "#466A9F", textColor: "#FFFFFF" },
 ] as const;
 
 export const sponsorshipBenefits = [

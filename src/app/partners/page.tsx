@@ -27,7 +27,7 @@ export default function PartnersPage() {
   return (
     <main id="main-content">
       <SectionScrollspy items={partnersSectionLinks} />
-      <PageIntro
+      {/* <PageIntro
         index={partnersPage.index}
         label={partnersPage.label}
         title={partnersPage.title}
@@ -49,8 +49,30 @@ export default function PartnersPage() {
             </ArrowLink>
           </>
         }
-      />
+      /> */}
+      
+
       <PageSection
+        id="tiers"
+        tone="red"
+        label={partnersPage.tiersLabel}
+        title={partnersPage.tiersHeading}
+        intro={partnersPage.tiersBody}
+        className=""
+        compact = {true}
+      >
+        <div className="mb-10 flex flex-col gap-0 sm:flex-row justify-start border-b border-white/15 pb-10">
+          <ArrowLink
+            href={sponsorship.packetPath}
+            variant="solid"
+            download
+          >
+            Download the 2026–27 packet
+          </ArrowLink>
+        </div>
+        <SponsorshipTiers />
+      </PageSection>
+<PageSection
         id="steps"
         tone="smoke"
         label={partnersPage.stepsLabel}
@@ -94,18 +116,8 @@ export default function PartnersPage() {
       </PageSection>
 
       <PageSection
-        id="tiers"
-        tone="black"
-        label={partnersPage.tiersLabel}
-        title={partnersPage.tiersHeading}
-        intro={partnersPage.tiersBody}
-      >
-        <SponsorshipTiers />
-      </PageSection>
-
-      <PageSection
         id="support"
-        tone="smoke"
+        tone="garnet"
         label={partnersPage.supportLabel}
         title={partnersPage.supportHeading}
         intro={partnersPage.supportBody}
@@ -114,18 +126,18 @@ export default function PartnersPage() {
           {supportAreas.map((area, index) => (
             <article
               key={area.title}
-              className="border-t border-black/15 pt-5"
+              className="border-t border-white/15 pt-5"
             >
               <span
                 aria-hidden="true"
-                className="font-display text-[2.2rem] leading-none text-red"
+                className="font-display text-[2.2rem] leading-none text-white"
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 max-w-md text-[16px] font-bold leading-snug">
                 {area.title}
               </h3>
-              <p className="mt-2 max-w-md text-[14px]/[1.7] text-black/65">
+              <p className="mt-2 max-w-md text-[14px]/[1.7] text-white/65">
                 {area.detail}
               </p>
             </article>
@@ -134,14 +146,14 @@ export default function PartnersPage() {
       </PageSection>
       <CtaSection
         id="contact-cta"
-        tone="red"
+        tone="ink"
         label="Sponsorship"
         heading="Start a conversation."
         body="Questions about tiers, recognition, or fulfillment? Email the team and we will follow up with the packet."
       >
         <ArrowLink
           href={mailto(contact.sponsorshipSubject)}
-          variant="inverse"
+          variant="outline"
         >
           Email CCR
         </ArrowLink>

@@ -142,7 +142,7 @@ export function ProgramSection() {
                 ))}
               </ol>
 
-              <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -150,10 +150,16 @@ export function ProgramSection() {
                 >
                 </a>
                 <ArrowLink
-                  href={contact.instagramUrl}
+                  href={"https://connect.sc.edu/AG/sfp/cec/the-carolina-collegiate-racing-fund"}
                   variant="outline"
                 >
                   {programContent.instagramCta}
+                </ArrowLink>
+                <ArrowLink
+                  href={contact.instagramUrl}
+                  variant="solid"
+                >
+                  {programContent.joinCta.label}
                 </ArrowLink>
               </div>
             </div>

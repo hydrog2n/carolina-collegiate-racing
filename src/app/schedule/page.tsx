@@ -65,9 +65,8 @@ export default function SchedulePage() {
       <PageSection
         id="calendar"
         tone="black"
-        label="Schedule"
-        title="Find an activity."
-        intro="Browse by date, category, or keyword."
+        label={schedulePage.label}
+        title={schedulePage.title}
         compact
       >
         <Suspense
@@ -80,64 +79,6 @@ export default function SchedulePage() {
           <ScheduleContent />
         </Suspense>
       </PageSection>
-
-      <PageSection
-        id="directions"
-        tone="black"
-        label={schedulePage.directionsLabel}
-        title={schedulePage.directionsHeading}
-      >
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
-          <div className="grid gap-4 lg:col-span-7">
-            {schedulePage.directions.map((direction, index) => (
-              <article
-                key={direction.title}
-                className={`rounded-[var(--radius-lg)] p-6 shadow-[0_12px_30px_rgba(0,0,0,0.18)] sm:p-8 ${
-                  index === 0
-                    ? "bg-red text-white"
-                    : "border border-white/15 bg-graphite text-white"
-                }`}
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <p
-                    className={`text-[11px] font-medium uppercase tracking-[0.17em] ${
-                      index === 0 ? "text-white" : "text-white/65"
-                    }`}
-                  >
-                    {index === 0 ? "Active arena" : "In procurement"}
-                  </p>
-                  <span
-                    aria-hidden="true"
-                    className={`font-display text-[1.8rem] leading-none ${
-                      index === 0 ? "text-white/80" : "text-white/45"
-                    }`}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="heading-support mt-4 text-[clamp(2rem,4vw,3.1rem)]">
-                  {direction.title}
-                </h3>
-                <p
-                  className={`mt-4 max-w-xl text-[15px]/[1.7] ${
-                    index === 0 ? "text-white" : "text-white/65"
-                  }`}
-                >
-                  {direction.detail}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div className="lg:col-span-5">
-            <PhotoPlaceholder
-              label="Race weekend"
-              aspectClassName="aspect-[16/10] lg:aspect-[4/3]"
-            />
-          </div>
-        </div>
-      </PageSection>
-
       <CtaSection
         id="updates-cta"
         tone="red"

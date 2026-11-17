@@ -36,7 +36,7 @@ export function SiteFooter() {
 
             <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
               <UscMarkDark className="h-11 w-10 shrink-0" />
-              <p className="text-[11px] font-medium uppercase leading-relaxed tracking-[0.13em] text-white/65">
+              <p className="text-[11px] font-medium uppercase leading-snug tracking-[0.13em]  text-white/40">
                 {site.affiliation}
                 <br />
                 {site.university}
@@ -90,9 +90,9 @@ export function SiteFooter() {
               href={contact.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 block text-[14px] text-white/65 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="mt-2 block text-[16px] text-white/65 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              Instagram {contact.instagramHandle}
+              Instagram: {contact.instagramHandle}
             </a>
 
             <div className="mt-7 border-t border-white/10 pt-5">

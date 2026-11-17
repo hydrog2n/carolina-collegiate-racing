@@ -35,7 +35,7 @@ export function SiteHeader() {
             >
               <UscMarkDark className="h-8.5 w-auto shrink-0" />
             </Link>
-            <p className="pt-0.5 text-[11px] font-medium uppercase leading-snug tracking-[0.13em]  text-white/40">
+            <p className="hidden md:block pt-0.5 text-[11px] font-medium uppercase leading-snug tracking-[0.13em]  text-white/40">
               Student Organization
               <br />
               University of South Carolina
@@ -48,11 +48,11 @@ export function SiteHeader() {
             <PrimaryNav className="flex items-center gap-2" />
           </div>
           <PointerGlowLink
-            href="/join"
+            href="https://crowdfunding.sc.edu/project/51152"
             className="group cursor-glow-link inline-flex min-h-11 items-center gap-3 rounded-[var(--radius-md)] border-transparent bg-[var(--ccr-red)] px-5 py-3 text-[13px] font-semibold uppercase tracking-[0.10em] text-white transition-all duration-300 hover:text-white hover:shadow-[0_0px_20px_rgba(255,55,71,0.4)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             <span className="inline-flex items-center gap-3">
-              Join CCR
+              Support us
               <ArrowIcon className="transition-transform duration-200 group-hover:translate-x-1" />
             </span>
           </PointerGlowLink>

@@ -26,16 +26,16 @@ export default function JoinPage() {
         actions={
           <>
             <ArrowLink
-              href={mailto(contact.joinSubject)}
+              href={"https://garnetgate.sa.sc.edu/organization/ccr"}
               variant="inverse"
             >
-              Email CCR
+              Garnet Gate
             </ArrowLink>
             <ArrowLink
-              href={contact.instagramUrl}
+              href={mailto(contact.joinSubject)}
               variant="outline"
             >
-              Follow on Instagram
+              Email us
             </ArrowLink>
           </>
         }
@@ -43,7 +43,7 @@ export default function JoinPage() {
 
       <PageSection
         id="opportunities"
-        tone="smoke"
+        tone="black"
         label={joinPage.opportunitiesLabel}
         title={joinPage.opportunitiesHeading}
       >
@@ -62,7 +62,7 @@ export default function JoinPage() {
               <h3 className="mt-3 text-[16px] font-bold">
                 {opportunity.title}
               </h3>
-              <p className="mt-2 text-[14px]/[1.7] text-black/65">
+              <p className="mt-2 text-[14px]/[1.7] text-white/65">
                 {opportunity.detail}
               </p>
             </article>
@@ -72,16 +72,16 @@ export default function JoinPage() {
 
       <PageSection
         id="how-to-join"
-        tone="black"
+        tone="smoke"
         label={joinPage.howLabel}
         title={joinPage.howHeading}
         intro={joinPage.howBody}
       >
-        <div className="grid gap-8 border-t border-white/15 pt-6 lg:grid-cols-12 lg:gap-12">
+        <div className="grid gap-8 border-t border-black/15 pt-6 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
             <a
               href={mailto(contact.joinSubject)}
-              className="heading-support group inline-flex max-w-full items-start gap-4 break-all text-[clamp(1.5rem,3.4vw,2.75rem)] text-white transition-colors hover:text-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="heading-support group inline-flex max-w-full items-start gap-4 break-all text-[clamp(1.5rem,3.4vw,2.75rem)] text-black transition-colors hover:text-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
             >
               {contact.email}
               <span
@@ -91,20 +91,20 @@ export default function JoinPage() {
                 →
               </span>
             </a>
-            <p className="mt-4 max-w-xl text-[13px]/[1.65] text-white/65">
+            <p className="mt-4 max-w-xl text-[13px]/[1.65] text-black/65">
               {joinPage.note}
             </p>
           </div>
 
           <div className="lg:col-span-5">
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/60">
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-black/60">
               Instagram
             </p>
             <a
               href={contact.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 inline-flex min-h-11 items-center gap-2 text-[14px] font-medium text-white/80 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="mt-0 inline-flex min-h-11 items-center gap-2 text-[25px] font-bold text-blacktransition-colors hover:text-black focus-visible:outline-2 hover:text-red  focus-visible:outline-offset-4 focus-visible:outline-black"
             >
               {contact.instagramHandle}
               <span aria-hidden="true">↗</span>
@@ -112,21 +112,6 @@ export default function JoinPage() {
           </div>
         </div>
       </PageSection>
-
-      <CtaSection
-        id="join-cta"
-        tone="red"
-        label="Join CCR"
-        heading="Ready to get involved?"
-        body="Tell the team where you would like to contribute."
-      >
-        <ArrowLink
-          href={mailto(contact.joinSubject)}
-          variant="inverse"
-        >
-          Email CCR
-        </ArrowLink>
-      </CtaSection>
     </main>
   );
 }

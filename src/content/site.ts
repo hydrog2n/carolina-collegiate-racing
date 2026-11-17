@@ -14,6 +14,7 @@ export const primaryNav = [
   { label: "Partners", href: "/partners" },
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
+  { label: "Discord", href: "https://discord.com/invite/uErnfyyV3z" },
 ] as const;
 
 export const mobileNav = [
@@ -24,9 +25,21 @@ export const mobileNav = [
   { label: "Gallery", href: "/gallery" },
   { label: "About", href: "/about" },
   { label: "Join CCR", href: "/join" },
+  { label: "Discord", href: "https://discord.com/invite/uErnfyyV3z" },
+  { label: "Garnet Gate", href: "https://garnetgate.sa.sc.edu/organization/ccr" },
 ] as const;
 
-export const footerNav = mobileNav;
+export const footerNav = [
+  { label: "Home", href: "/" },
+  { label: "Team", href: "/team" },
+  { label: "Schedule", href: "/schedule" },
+  { label: "Partners", href: "/partners" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/about" },
+  { label: "Join CCR", href: "/join" },
+  { label: "Discord", href: "https://discord.com/invite/uErnfyyV3z" },
+  { label: "Garnet Gate", href: "https://garnetgate.sa.sc.edu/organization/ccr" },
+] as const;
 
 export const homeSectionLinks = [
   { id: "top", label: "Home" },
@@ -58,9 +71,8 @@ export const teamSectionLinks = [
 ] as const;
 
 export const scheduleSectionLinks = [
-  { id: "top", label: "Schedule" },
   { id: "calendar", label: "Calendar" },
-  { id: "directions", label: "Racing directions" },
+  { id: "updates-cta", label: "Follow us" },
 ] as const;
 
 export const partnersSectionLinks = [
@@ -75,7 +87,6 @@ export const joinSectionLinks = [
   { id: "top", label: "Join CCR" },
   { id: "opportunities", label: "Ways to contribute" },
   { id: "how-to-join", label: "Getting involved" },
-  { id: "join-cta", label: "Email CCR" },
 ] as const;
 
 export const gallerySectionLinks = [
@@ -85,8 +96,8 @@ export const gallerySectionLinks = [
 
 export const contact = {
   email: "carolinacollegiateracing@gmail.com",
-  instagramHandle: "@carolina_collegiate_racing",
-  instagramUrl: "https://www.instagram.com/carolina_collegiate_racing/",
+  instagramHandle: "@carolinacollegiateracing",
+  instagramUrl: "https://www.instagram.com/carolinacollegiateracing/",
   generalSubject: "General inquiry — Carolina Collegiate Racing",
   sponsorshipSubject: "Sponsorship inquiry — Carolina Collegiate Racing",
   joinSubject: "Joining Carolina Collegiate Racing",
