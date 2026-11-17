@@ -76,9 +76,8 @@ export const scheduleSectionLinks = [
 ] as const;
 
 export const partnersSectionLinks = [
-  { id: "top", label: "Partners" },
-  { id: "steps", label: "How to sponsor" },
   { id: "tiers", label: "Sponsorship tiers" },
+  { id: "steps", label: "How to sponsor" },
   { id: "support", label: "Support" },
   { id: "contact-cta", label: "Sponsorship" },
 ] as const;
